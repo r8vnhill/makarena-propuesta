@@ -1,10 +1,10 @@
 \documentclass[submission]{eptcs}
-  \input{Imports.tex}
-  \input{Definitions.tex}
+  \input{Packages}
+  \input{Definitions}
   \setlength{\parindent}{0pt}
   \providecommand{\event}{} % Name of the event you are submitting to
 
-  \title{Deducción evolutiva de funciones de evaluación aplicadas a \textit{Minimax}}
+  \title{Makarena: Deducción evolutiva de funciones de evaluación aplicadas a \textit{Minimax}}
   \author{Ignacio Slater Muñoz
     \institute{
       Departamento de Ciencias de la Computación \\
@@ -14,6 +14,8 @@
     }
     \email{\url{ignacio.slater@ug.uchile.cl}}
   }
+
+  \addbibresource{references.bib}
 
 \begin{document}
   \maketitle
@@ -42,30 +44,31 @@
   % Texto 
 
   \section{Pregunta de investigación}
+    Dada una representación del estado de un juego. 
+    ¿Es posible definir un algoritmo que encuentre una función de evaluación del estado del juego 
+    para la toma de decisiones del algoritmo \textit{Minimax}?
 
-  ....
+  \section{Hipótesis}
+    Es posible utilizar \textit{programación genética} para derivar la función de evaluación como
+    un árbol de sintaxis abstracta.
 
-  \section{Hypothesis}
+  % \section{Main Goal}
 
 
-  \section{Main Goal}
+  % \section{Specific goals}
 
+  % \begin{itemize}
+  % \item goal 1
+  % \end{itemize}
 
-  \section{Specific goals}
+  % \section{Methodology}
 
-  \begin{itemize}
-  \item goal 1
-  \end{itemize}
+  % texto
 
-  \section{Methodology}
+  % \section{Expected results}
 
-  texto
-
-  \section{Expected results}
-
-  y contribuciones
+  % y contribuciones
 
   \nocite{*}
-  \bibliographystyle{eptcs}
-  \bibliography{references}
+  \printbibliography
 \end{document}
