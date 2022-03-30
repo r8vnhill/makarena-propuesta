@@ -1,30 +1,51 @@
 \documentclass[submission]{eptcs}
-  \input{Packages}
-  \input{Definitions}
-  \setlength{\parindent}{0pt}
-  \providecommand{\event}{} % Name of the event you are submitting to
-
-  \title{Makarena: Deducción evolutiva de funciones de evaluación aplicadas a \textit{Minimax}}
-  \author{Ignacio Slater Muñoz
-    \institute{
-      Departamento de Ciencias de la Computación \\
-      Universidad de Chile  \\
-      Santiago, Chile \\
-      \today
-    }
-    \email{\url{ignacio.slater@ug.uchile.cl}}
-  }
-
-  \addbibresource{references.bib}
+  \input{.preamble/Packages}
+  \input{.preamble/Definitions}
+  \input{.preamble/config}
 
 \begin{document}
   \maketitle
 
   % \section{Introduction}
-
+    % TODO: Jugadores artificiales en videojuegos
   % Texto ...
 
-  % \section{Related work}
+  \section{Estado del arte}
+    \subsection{Juegos de suma cero}
+      Los \textit{\textbf{juegos de suma cero}}\cite{wiki-zero-sum-game} (\textit{zero sum games}) 
+      son una representación matemática usada en \textit{teoría de juegos} y \textit{teoría 
+      económica} para describir una situación donde existen dos \enquote{jugadores} que se enfrentan
+      entre sí.
+      Un \textit{juego es de suma cero} si la ventaja que lleva un jugador es igual a la pérdida del
+      otro.
+
+      Los \textit{juegos de suma cero} son un tipo de juegos de suma constante donde la suma de 
+      ganancia y pérdida es igual a cero.
+
+      \begin{definition}[\textbf{Recurso}]
+        Se le dirá recurso a cada elemento en el juego que acerque a un jugador a una jugada óptima.
+      \end{definition}
+
+      En un juego de suma cero, todos los jugadores perciben la misma ganancia de cada recurso.   
+      Para entender esto podemos considerar un juego con tres estados: empate, ganador y perdedor, 
+      con puntajes 0, 1 y -1 respectivamente.
+
+      \begin{itemize}
+        \item \textbf{Empate:} Ningún jugador tiene ventaja; ambos jugadores tienen 0 puntos.
+        \item \textbf{Ganador:} El jugador ganó, por lo que tiene 1 punto; el otro jugador pierde 
+          así que tiene -1 puntos.
+        \item \textbf{Perdedor:} El jugador perdió, por lo que tiene -1 puntos; el otro jugador ganó 
+          así que tiene 1 punto.
+      \end{itemize}
+      
+      De esta forma, para todo estado del juego, la suma de los puntajes es 0.
+
+    \subsection{\textit{Minimax}}
+      \textit{Minimax}\cite{wiki-minimax, neumann1928theorie, fan1953minimax} (\textit{MM}) es un 
+      algoritmo de decisión utilizado en múltiples ámbitos para minimizar la pérdida posible para 
+      el \enquote{peor caso} (\textit{maximum loss}). 
+      Se formuló originalmente para Originally formulated for n-player zero-sum game theory, covering both the cases where players take alternate moves and those where they make simultaneous moves, it has also been extended to more complex games and to general decision-making in the presence of uncertainty.
+
 
   % Texto...
 
