@@ -2344,15 +2344,17 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">wiki-zero-sum-game</bcf:citekey>
-    <bcf:citekey order="2">wiki-minimax</bcf:citekey>
-    <bcf:citekey order="2">neumann1928theorie</bcf:citekey>
-    <bcf:citekey order="2">fan1953minimax</bcf:citekey>
+    <bcf:citekey order="1">wiki-evaluation-function</bcf:citekey>
+    <bcf:citekey order="2">wiki-zero-sum-game</bcf:citekey>
+    <bcf:citekey order="3">wiki-minimax</bcf:citekey>
+    <bcf:citekey order="3">neumann1928theorie</bcf:citekey>
+    <bcf:citekey order="3">fan1953minimax</bcf:citekey>
     <bcf:citekey order="0" nocite="1">*</bcf:citekey>
-    <bcf:citekey order="3">wiki-zero-sum-game</bcf:citekey>
-    <bcf:citekey order="4">wiki-minimax</bcf:citekey>
-    <bcf:citekey order="5">neumann1928theorie</bcf:citekey>
-    <bcf:citekey order="6">fan1953minimax</bcf:citekey>
+    <bcf:citekey order="4">wiki-evaluation-function</bcf:citekey>
+    <bcf:citekey order="5">wiki-zero-sum-game</bcf:citekey>
+    <bcf:citekey order="6">wiki-minimax</bcf:citekey>
+    <bcf:citekey order="7">neumann1928theorie</bcf:citekey>
+    <bcf:citekey order="8">fan1953minimax</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">

@@ -1,0 +1,106 @@
+\section{Estado del arte}
+  \subsection{Función de evaluación}
+    \begin{definition}[\textbf{Recurso}]
+      Se le dirá recurso a cada elemento en el juego que acerque a un jugador a una jugada óptima.
+    \end{definition}
+
+    Se le dirá \textbf{función de evaluación}\cite{wiki-evaluation-function} \(v_i(s)\) a la función 
+    que determina la cantidad de recursos que tiene el jugador \(i\) en el estado \(s\).
+    A su vez, el \textbf{estado del juego} se define como el par \(a_i, a_{-i}\) que representa las
+    acciones de los jugadores que llevan a una configuración específica del juego (un ejemplo de
+    configuración puede ser la posición y cantidad de piezas en el tablero).
+
+  \subsection{Juegos de suma cero}
+    Los \textit{\textbf{juegos de suma cero}}\cite{wiki-zero-sum-game} (\textit{zero sum games}) 
+    son una representación matemática usada en \textit{teoría de juegos} y \textit{teoría 
+    económica} para describir una situación donde existen dos \enquote{jugadores} que se enfrentan
+    entre sí.
+    Un \textit{juego es de suma cero} si la ventaja que lleva un jugador es igual a la pérdida del
+    otro.
+
+    Los \textit{juegos de suma cero} son un tipo de juegos de suma constante donde la suma de 
+    ganancia y pérdida es igual a cero.
+
+    En un juego de suma cero, todos los jugadores perciben la misma ganancia de cada recurso.   
+    Para entender esto podemos considerar un juego con tres estados: empate, ganador y perdedor, 
+    con puntajes 0, 1 y -1 respectivamente.
+
+    \begin{itemize}
+      \item \textbf{Empate:} Ningún jugador tiene ventaja; ambos jugadores tienen 0 puntos.
+      \item \textbf{Ganador:} El jugador ganó, por lo que tiene 1 punto; el otro jugador pierde 
+        así que tiene -1 puntos.
+      \item \textbf{Perdedor:} El jugador perdió, por lo que tiene -1 puntos; el otro jugador ganó 
+        así que tiene 1 punto.
+    \end{itemize}
+    
+    De esta forma, para todo estado del juego, la suma de los puntajes es 0.
+
+  \subsection{\textit{Minimax}}
+    \textit{Minimax}\cite{wiki-minimax, neumann1928theorie, fan1953minimax} (\textit{MM}) es un 
+    algoritmo de decisión utilizado en múltiples ámbitos para minimizar la pérdida posible para 
+    el \enquote{peor caso} (\textit{maximum loss}). 
+    Se formuló originalmente para juegos de suma cero de \(n\) jugadores, pero se ha extendido a
+    juegos más complejos y a problemas de decisión con incertidumbre.
+
+    \begin{definition}[\textbf{Valor \textit{Maximin}}]
+      El valor \textit{maximin} de un estado del juego es la máxima cantidad de recursos que puede 
+      obtener un jugador, sin conocer las jugadas de su oponente.
+
+      Formalmente:
+      \[
+        \underline{v_{i}} = \max_{a_{i}}\min_{a_{-i}}v_{i}(a_{i},a_{-i})
+      \]
+      Donde:
+      \begin{itemize}
+        \item \(i\) es el índice del jugador actual.
+        \item \(-i\) representa a todos los jugadores oponentes.
+        \item \(a_i\) es la jugada del jugador \(i\).
+        \item \(a_{-i}\) son las jugadas de todos los oponentes.
+        \item \(v_i\) es la función de evaluación del estado del juego en el turno del jugador 
+          \(i\).
+      \end{itemize}
+    \end{definition}
+
+    \begin{definition}[\textbf{Valor \textit{Minimax}}]
+      El valor \textit{minimax} de un estado del juego es la mínima cantidad de recursos que un 
+      oponente puede forzar al jugador a perder, sin saber las jugadas del jugador.
+      
+      Formalmente:
+      \[
+        \overline{v_{i}} = 
+          \min_{a_{-i}}\max_{a_{i}}{v_{i}(a_{i}, a_{-i})}
+      \]
+    \end{definition}
+
+    \begin{definition}
+      Se define la función \(MM\) para un estado del juego \(s\) como:
+      \[
+        MM_i(s) = \begin{cases}
+          v_i(s) & \text{si } s = F  \\
+          \underline{v_{i}}(s) & \text{si es el turno del jugador } i \\
+          \overline{v_{i}}(s) & \text{si es el turno del oponente } -i
+        \end{cases}  
+      \]
+      Con \(F\) representando el estado final del juego.
+    \end{definition}
+
+    \begin{definition}[\textbf{Algoritmo \textit{Minimax}}]
+      Sea \texttt{t} un árbol de estados del juego, donde cada nodo del árbol es un estado del juego
+      evaluado con la función de evaluación \(v_i\), y donde cada arco del árbol es una jugada de un
+      jugador (para simplificar diremos que cada jugada representa un turno y que los jugadores 
+      toman turnos alternados, primero \(i\) y luego \(-i\)).
+      Luego, cada nodo tendrá tantos hijos como jugadas pueda realizar cada jugador en su turno.
+
+      Se define el algoritmo \textit{minimax} para un árbol de estados \texttt{t} como:
+      
+      \begin{minted}{kotlin}
+        fun minimax(t: StateTree, player: Player in [i, -i]): Double =
+          if (t.isTerminal()) {
+            t.value
+          } else if (player == -i)  {
+            t.children.maxOf { child -> minimax(child, i) }
+          } else {
+            t.children.minOf { child -> minimax(child, -i) }
+          } 
+      \end{minted}
+    \end{definition}
