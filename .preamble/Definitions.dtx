@@ -1,0 +1,106 @@
+%% "Makarena" (c) by Ignacio Slater M.
+%% "Makarena" is licensed under a
+%% Creative Commons Attribution 4.0 International License.
+%% You should have received a copy of the license along with this
+%% work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VARIABLES AND COMMANDS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ExplSyntaxOn
+
+% | Generic getter for the document variables.
+\NewExpandableDocumentCommand { \getvmeta } { m } { \prop_item:Nn \g_rvnlatex_doc_prop {#1} }
+\NewDocumentCommand { \setvmeta } { m m } { \prop_gput:NnV \g_rvnlatex_doc_prop {#1} #2 }
+
+% region : TEMPLATE METADATA -----------------------------------------------------------------------
+% | Dictionary containing the metadata of the document.
+\keys_define:nn { ravenhill/latex/meta } {
+  title .tl_set:N = \l_rvnlatex_title_str ,
+  logo .tl_set:N = \l_rvnlatex_logo_str ,
+  date .tl_set:N = \l_rvnlatex_date_tl ,
+  city .tl_set:N = \l_rvnlatex_city_str ,
+  country .tl_set:N = \l_rvnlatex_country_str ,
+  subtitle .tl_set:N = \l_rvnlatex_subtitle_tl ,
+  author .clist_set:N = \l_rvnlatex_author_clist ,
+  location .tl_set:N = \l_rvnlatex_location_tl ,
+}
+
+% | Creates variables for the document's metadata.
+\NewDocumentCommand { \setup } { m } { 
+  \group_begin:
+  \prop_new:c { g_rvnlatex_doc_prop }
+  \keys_set:nn { ravenhill/latex/meta } { #1 }
+  \setvmeta { title } { \l_rvnlatex_title_str }
+  \prop_gput:cnV { g_rvnlatex_doc_prop } { logo } \l_rvnlatex_logo_str
+  \prop_gput:cnV { g_rvnlatex_doc_prop } { date } \l_rvnlatex_date_tl
+  \prop_gput:cnV { g_rvnlatex_doc_prop } { city } \l_rvnlatex_city_str
+  \prop_gput:cnV { g_rvnlatex_doc_prop } { country } \l_rvnlatex_country_str
+  \prop_gput:cnV { g_rvnlatex_doc_prop } { subtitle } \l_rvnlatex_subtitle_tl
+  \setvmeta { author } { \l_rvnlatex_author_clist }
+  \setvmeta { location } { \l_rvnlatex_location_tl }
+  \group_end:
+}
+% endregion ----------------------------------------------------------------------------------------
+
+% region : TITLE PAGE ------------------------------------------------------------------------------
+% | Renders the title and subtitle of the document.
+% | Arguments:
+% |   #1: (Optional) Vertical space after the title block.
+\NewDocumentCommand { \titleblock } { o } {
+    {\huge                                                        % font_size = huge
+      \textbf{\getvmeta { title }}                                % bold(title)
+      \keys_if_exist:nnT { ravenhill/latex/meta } { subtitle } {  % if (subtitle exists) {
+        \\[1ex]       q                                           %   add vertical space
+        \textit{\getvmeta { subtitle }}                           %   italic(subtitle)
+      } { }                                                       % } else { }
+    }
+  \IfNoValueTF {#1} { } { \vspace{#1} }                           % if (#1 exists) { add vertical space }
+}
+
+% | Renders the logo of the document.
+\NewDocumentCommand { \inputlogo } { } {
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{ \getvmeta { logo } }
+  \end{figure}
+}
+
+\NewDocumentCommand { \authorblock } { } {
+  \clist_new:N \l__authblock_authcopy_clist
+  \clist_set:Nx \l__authblock_authcopy_clist { \getvmeta { author } }
+  \int_new:N \l__authblock_count_int
+  \int_set:Nn \l__authblock_count_int { \clist_count:N \l__authblock_authcopy_clist }
+  \rvnlatex_createblock:nn { \l__authblock_authcopy_clist } { \l__authblock_count_int }
+}
+
+\str_new:N \l__createblock_first_str
+\str_new:N \l__createblock_second_str
+
+\cs_new_protected:Npn \rvnlatex_createblock:nn #1 #2 {
+  \begin{center}
+    \int_compare:nNnTF { 0 } = {#2} { } {
+      \int_compare:nNnTF { 1 } = {#2} {
+        #1
+      } {
+        \clist_pop:NN #1 \l__createblock_first_str
+        \clist_pop:NN #1 \l__createblock_second_str
+        \begin{minipage}{0.5\textwidth}
+          \centering\l__createblock_first_str
+        \end{minipage}
+        \begin{minipage}{0.5\textwidth}
+          \centering\l__createblock_second_str
+        \end{minipage}
+        \vspace{0.5cm}
+        \rvnlatex_createblock:nn {#1} { #2 - 2 }
+      }
+    }
+  \end{center}
+}
+
+% endregion
+\ExplSyntaxOff
+
+% region : Theorem Styles
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+% endregion

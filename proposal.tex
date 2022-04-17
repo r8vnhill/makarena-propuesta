@@ -1,10 +1,38 @@
+%% "Makarena" (c) by Ignacio Slater M.
+%% "Makarena" is licensed under a
+%% Creative Commons Attribution 4.0 International License.
+%% You should have received a copy of the license along with this
+%% work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 \documentclass[submission]{eptcs}
   \input{.preamble/Packages}
-  \input{.preamble/Definitions}
+  \input{.preamble/Definitions.dtx}
   \input{.preamble/config}
 
+  \setup { 
+    title = {
+      \textit{Makarena}: Deducción evolutiva de funciones de evaluación aplicadas a \textit{Minimax}
+    },
+    subtitle = {Propuesta de tesis},
+    author = {
+      \textbf{Ignacio Slater M.} \\
+      \textit{Departamento de Ciencias de la Computación} \\
+      Universidad de Chile
+    },
+    logo = {logos/LogoDCC.pdf},
+    location = {Santiago, Chile},
+  }
+
 \begin{document}
-  \maketitle
+  \begin{titlepage}
+    \centering
+    \titleblock [2cm]
+    \inputlogo
+    \vspace{1cm}
+    {\Large \authorblock}
+  \end{titlepage}
+  
+  \insertequation{\frac{1}{2}}
+
 
   % \section{Introduction}
     % TODO: Jugadores artificiales en videojuegos
