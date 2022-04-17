@@ -65,33 +65,54 @@
   \end{figure}
 }
 
+% | Renders the authors of the document.
+% | The authors are arranged in accord to the number of authors.
 \NewDocumentCommand { \authorblock } { } {
-  \clist_new:N \l__authblock_authcopy_clist
-  \clist_set:Nx \l__authblock_authcopy_clist { \getvmeta { author } }
-  \int_new:N \l__authblock_count_int
-  \int_set:Nn \l__authblock_count_int { \clist_count:N \l__authblock_authcopy_clist }
-  \rvnlatex_createblock:nn { \l__authblock_authcopy_clist } { \l__authblock_count_int }
+  \clist_new:N \l__authblock_authcopy_clist                           % var cl: clist
+  \clist_set:Nx \l__authblock_authcopy_clist { \getvmeta { author } } % cl = metadata[author]
+  \int_new:N \l__authblock_count_int                                  % var i: int
+  \int_set:Nn \l__authblock_count_int {                               % n = cl.size
+    \clist_count:N \l__authblock_authcopy_clist                       
+  }
+  \rvnlatex_createblock:nn { \l__authblock_authcopy_clist } {         % create_block(cl, n)
+    \l__authblock_count_int 
+  }
 }
+% region : private
+\str_new:N \l__createblock_first_str                                  % var first: str
+\str_new:N \l__createblock_second_str                                 % var second: str 
+% endregion
 
-\str_new:N \l__createblock_first_str
-\str_new:N \l__createblock_second_str
-
+% | Creates an author block.
+% |
+% | The arrangement is given by the following algorithm:
+% |   if (number of authors is 1) {
+% |     Renders the author centered.
+% |   }
+% |   else if (number of authors is even) {
+% |     Renders the next two authors centered in two columns.
+% |     Run the algorithm recursively with the remaining authors.
+% |   }
+% |
+% | Arguments:
+% |   #1: the list of authors.
+% |   #2: the size of the list of authors.
 \cs_new_protected:Npn \rvnlatex_createblock:nn #1 #2 {
   \begin{center}
-    \int_compare:nNnTF { 0 } = {#2} { } {
-      \int_compare:nNnTF { 1 } = {#2} {
-        #1
-      } {
-        \clist_pop:NN #1 \l__createblock_first_str
-        \clist_pop:NN #1 \l__createblock_second_str
-        \begin{minipage}{0.5\textwidth}
-          \centering\l__createblock_first_str
+    \int_compare:nNnTF { 0 } = {#2} { } {                             % if (n == 0) { } 
+      \int_compare:nNnTF { 1 } = {#2} {                               % else if (n == 1):
+        #1                                                            %   Renders the author centered.
+      } {                                                             % else: 
+        \clist_pop:NN #1 \l__createblock_first_str                    %   first = cl.pop()
+        \clist_pop:NN #1 \l__createblock_second_str                   %   second = cl.pop()
+        \begin{minipage}{0.5\textwidth}                               % Render the next author 
+          \centering\l__createblock_first_str                         % centered to the left
         \end{minipage}
-        \begin{minipage}{0.5\textwidth}
-          \centering\l__createblock_second_str
+        \begin{minipage}{0.5\textwidth}                               % Render the next author
+          \centering\l__createblock_second_str                        % centered to the right
         \end{minipage}
-        \vspace{0.5cm}
-        \rvnlatex_createblock:nn {#1} { #2 - 2 }
+        \vspace{0.5cm}                                                % add vertical space
+        \rvnlatex_createblock:nn {#1} { #2 - 2 }                      % create_block(cl, n - 2)
       }
     }
   \end{center}
