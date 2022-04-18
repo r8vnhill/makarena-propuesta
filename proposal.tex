@@ -3,7 +3,7 @@
 %% Creative Commons Attribution 4.0 International License.
 %% You should have received a copy of the license along with this
 %% work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
-\documentclass[submission]{eptcs}
+\documentclass{article}
   \input{.preamble/Packages}
   \input{.preamble/Definitions.dtx}
   \input{.preamble/config}
@@ -18,6 +18,12 @@
       \textit{Departamento de Ciencias de la Computación} \\
       Universidad de Chile
     },
+    advisors = {
+      \textbf{Nancy Hitschfeld} \\
+      \textit{Departamento de Ciencias de la Computación} \\
+      Universidad de Chile  \\
+      {\small\textit{Profesora guía}}
+    },
     logo = {logos/LogoDCC.pdf},
     location = {Santiago, Chile},
   }
@@ -25,13 +31,16 @@
 \begin{document}
   \begin{titlepage}
     \centering
+    \vspace*{2cm}
     \titleblock [2cm]
     \inputlogo
     \vspace{1cm}
-    {\Large \authorblock}
+    \authorblock
+    \vfill
+    \location\\
+    \today
   \end{titlepage}
   
-  \insertequation{\frac{1}{2}}
 
 
   % \section{Introduction}

@@ -22,7 +22,9 @@
   country .tl_set:N = \l_rvnlatex_country_str ,
   subtitle .tl_set:N = \l_rvnlatex_subtitle_tl ,
   author .clist_set:N = \l_rvnlatex_author_clist ,
+  advisors .clist_set:N = \l_rvnlatex_advisors_clist ,
   location .tl_set:N = \l_rvnlatex_location_tl ,
+  date .tl_set:N = \l_rvnlatex_date_tl ,
 }
 
 % | Creates variables for the document's metadata.
@@ -31,13 +33,15 @@
   \prop_new:c { g_rvnlatex_doc_prop }
   \keys_set:nn { ravenhill/latex/meta } { #1 }
   \setvmeta { title } { \l_rvnlatex_title_str }
-  \prop_gput:cnV { g_rvnlatex_doc_prop } { logo } \l_rvnlatex_logo_str
-  \prop_gput:cnV { g_rvnlatex_doc_prop } { date } \l_rvnlatex_date_tl
-  \prop_gput:cnV { g_rvnlatex_doc_prop } { city } \l_rvnlatex_city_str
-  \prop_gput:cnV { g_rvnlatex_doc_prop } { country } \l_rvnlatex_country_str
-  \prop_gput:cnV { g_rvnlatex_doc_prop } { subtitle } \l_rvnlatex_subtitle_tl
+  \setvmeta { logo } { \l_rvnlatex_logo_str }
+  \setvmeta { date } { \l_rvnlatex_date_tl }
+  \setvmeta { city } { \l_rvnlatex_city_str }
+  \setvmeta { country } { \l_rvnlatex_country_str }
+  \setvmeta { subtitle } { \l_rvnlatex_subtitle_tl }
   \setvmeta { author } { \l_rvnlatex_author_clist }
+  \setvmeta { advisors } { \l_rvnlatex_advisors_clist }
   \setvmeta { location } { \l_rvnlatex_location_tl }
+  \setvmeta { date } { \l_rvnlatex_date_tl }
   \group_end:
 }
 % endregion ----------------------------------------------------------------------------------------
@@ -50,7 +54,7 @@
     {\huge                                                        % font_size = huge
       \textbf{\getvmeta { title }}                                % bold(title)
       \keys_if_exist:nnT { ravenhill/latex/meta } { subtitle } {  % if (subtitle exists) {
-        \\[1ex]       q                                           %   add vertical space
+        \\[1ex]                                                   %   add vertical space
         \textit{\getvmeta { subtitle }}                           %   italic(subtitle)
       } { }                                                       % } else { }
     }
@@ -68,9 +72,27 @@
 % | Renders the authors of the document.
 % | The authors are arranged in accord to the number of authors.
 \NewDocumentCommand { \authorblock } { } {
-  \clist_new:N \l__authblock_authcopy_clist                           % var cl: clist
-  \clist_set:Nx \l__authblock_authcopy_clist { \getvmeta { author } } % cl = metadata[author]
-  \int_new:N \l__authblock_count_int                                  % var i: int
+  \rvnlatex_authorblock:x { \getvmeta { author } }
+  \keys_if_exist:nnT { ravenhill/latex/meta } { advisors } {          % if (advisors exists):
+    \rvnlatex_authorblock:x { \getvmeta { advisors } }                %   create_block(metadata[advisors], 1)
+  }                                                                   
+}
+
+\NewDocumentCommand { \location } { } {
+  \getvmeta { location }
+}
+
+
+% region : private
+\str_new:N \l__createblock_first_str                                  % var first: str
+\str_new:N \l__createblock_second_str                                 % var second: str 
+
+\clist_new:N \l__authblock_authcopy_clist                           % var cl: clist
+\int_new:N \l__authblock_count_int                                  % var i: int
+% endregion
+
+\cs_new_protected:Npn \rvnlatex_authorblock:x #1 {
+  \clist_set:Nx \l__authblock_authcopy_clist { #1 }                   % cl = metadata[author]
   \int_set:Nn \l__authblock_count_int {                               % n = cl.size
     \clist_count:N \l__authblock_authcopy_clist                       
   }
@@ -78,10 +100,6 @@
     \l__authblock_count_int 
   }
 }
-% region : private
-\str_new:N \l__createblock_first_str                                  % var first: str
-\str_new:N \l__createblock_second_str                                 % var second: str 
-% endregion
 
 % | Creates an author block.
 % |
