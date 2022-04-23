@@ -4,9 +4,10 @@
 %% You should have received a copy of the license along with this
 %% work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 \documentclass{article}
-  \input{.preamble/Packages}
-  \input{.preamble/Definitions.dtx}
-  \input{.preamble/config}
+  \usepackage{import} % This will make our life easier
+  \import{.preamble}{Packages}
+  \import{.preamble}{Definitions}
+  \import{.preamble}{config}
 
   \setup { 
     title = {
@@ -26,45 +27,33 @@
     },
     logo = {logos/LogoDCC.pdf},
     location = {Santiago, Chile},
+    date = \today
   }
 
 \begin{document}
   \begin{titlepage}
     \centering
+    % Some vertical space before the title (note the *, it's needed to add space at the beginning 
+    % of the page).
     \vspace*{2cm}
     \titleblock [2cm]
     \inputlogo
-    \vspace{1cm}
+    \vspace{1cm}  % Some vertical space after the logo.
     \authorblock
-    \vfill
-    \location\\
-    \today
+    \vfill  % Fills the page so the location and date are at the bottom.
+    \location \\
+    \dateblock  \\
+    \footnotesize\texttt{Versión 0.1.2204231628}
   \end{titlepage}
-  
 
-
-  % \section{Introduction}
+ 
+  \section{Introducción}
+    \blindtext
     % TODO: Jugadores artificiales en videojuegos
-  % Texto ...
+  \import{contents}{Planteamiento_del_problema}
 
-  \import{contents}{Estado_del_arte.tex}
-
-  % Texto...
-
-  % \subsection{ Estrategia A}
-  % 8
-  % Texto ...  \cite{hopper2001empirical}. \\
-
-
-  % \subsection{ Estrategia B}
-
-
-  % \subsection{ Estrategia C}
-
-
-  % \section{Problem}
-
-  % Texto 
+  \section{Estado del arte}
+    \Blinddescription
 
   \section{Pregunta de investigación}
     Dada una representación del estado de un juego. 
@@ -75,23 +64,15 @@
     Es posible utilizar \textit{programación genética} para derivar la función de evaluación como
     un árbol de sintaxis abstracta.
 
-  % \section{Main Goal}
+  \section{Objetivos}
+    \blinditemize
 
+  \section{Metodologías}
+    \Blindtext
 
-  % \section{Specific goals}
+  \section{Resultados esperados}
+    \blindtext
 
-  % \begin{itemize}
-  % \item goal 1
-  % \end{itemize}
-
-  % \section{Methodology}
-
-  % texto
-
-  % \section{Expected results}
-
-  % y contribuciones
-
-  \nocite{*}
+  % \nocite{*}
   \printbibliography
 \end{document}

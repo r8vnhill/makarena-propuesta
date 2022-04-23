@@ -4,49 +4,11 @@
 %% You should have received a copy of the license along with this
 %% work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% VARIABLES AND COMMANDS
+% TITLE PAGE UTILITIES
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\ExplSyntaxOn
 
-% | Generic getter for the document variables.
-\NewExpandableDocumentCommand { \getvmeta } { m } { \prop_item:Nn \g_rvnlatex_doc_prop {#1} }
-\NewDocumentCommand { \setvmeta } { m m } { \prop_gput:NnV \g_rvnlatex_doc_prop {#1} #2 }
+% region : USER COMMANDS ---------------------------------------------------------------------------
 
-% region : TEMPLATE METADATA -----------------------------------------------------------------------
-% | Dictionary containing the metadata of the document.
-\keys_define:nn { ravenhill/latex/meta } {
-  title .tl_set:N = \l_rvnlatex_title_str ,
-  logo .tl_set:N = \l_rvnlatex_logo_str ,
-  date .tl_set:N = \l_rvnlatex_date_tl ,
-  city .tl_set:N = \l_rvnlatex_city_str ,
-  country .tl_set:N = \l_rvnlatex_country_str ,
-  subtitle .tl_set:N = \l_rvnlatex_subtitle_tl ,
-  author .clist_set:N = \l_rvnlatex_author_clist ,
-  advisors .clist_set:N = \l_rvnlatex_advisors_clist ,
-  location .tl_set:N = \l_rvnlatex_location_tl ,
-  date .tl_set:N = \l_rvnlatex_date_tl ,
-}
-
-% | Creates variables for the document's metadata.
-\NewDocumentCommand { \setup } { m } { 
-  \group_begin:
-  \prop_new:c { g_rvnlatex_doc_prop }
-  \keys_set:nn { ravenhill/latex/meta } { #1 }
-  \setvmeta { title } { \l_rvnlatex_title_str }
-  \setvmeta { logo } { \l_rvnlatex_logo_str }
-  \setvmeta { date } { \l_rvnlatex_date_tl }
-  \setvmeta { city } { \l_rvnlatex_city_str }
-  \setvmeta { country } { \l_rvnlatex_country_str }
-  \setvmeta { subtitle } { \l_rvnlatex_subtitle_tl }
-  \setvmeta { author } { \l_rvnlatex_author_clist }
-  \setvmeta { advisors } { \l_rvnlatex_advisors_clist }
-  \setvmeta { location } { \l_rvnlatex_location_tl }
-  \setvmeta { date } { \l_rvnlatex_date_tl }
-  \group_end:
-}
-% endregion ----------------------------------------------------------------------------------------
-
-% region : TITLE PAGE ------------------------------------------------------------------------------
 % | Renders the title and subtitle of the document.
 % | Arguments:
 % |   #1: (Optional) Vertical space after the title block.
@@ -72,9 +34,9 @@
 % | Renders the authors of the document.
 % | The authors are arranged in accord to the number of authors.
 \NewDocumentCommand { \authorblock } { } {
-  \rvnlatex_authorblock:x { \getvmeta { author } }
+  \latexito_authorblock:x { \getvmeta { author } }
   \keys_if_exist:nnT { ravenhill/latex/meta } { advisors } {          % if (advisors exists):
-    \rvnlatex_authorblock:x { \getvmeta { advisors } }                %   create_block(metadata[advisors], 1)
+    \latexito_authorblock:x { \getvmeta { advisors } }                %   create_block(metadata[advisors], 1)
   }                                                                   
 }
 
@@ -82,24 +44,17 @@
   \getvmeta { location }
 }
 
+\NewDocumentCommand { \dateblock } { } {
+  \getvmeta { date }
+}
 
-% region : private
+% endregion ----------------------------------------------------------------------------------------
+
 \str_new:N \l__createblock_first_str                                  % var first: str
 \str_new:N \l__createblock_second_str                                 % var second: str 
 
-\clist_new:N \l__authblock_authcopy_clist                           % var cl: clist
-\int_new:N \l__authblock_count_int                                  % var i: int
-% endregion
-
-\cs_new_protected:Npn \rvnlatex_authorblock:x #1 {
-  \clist_set:Nx \l__authblock_authcopy_clist { #1 }                   % cl = metadata[author]
-  \int_set:Nn \l__authblock_count_int {                               % n = cl.size
-    \clist_count:N \l__authblock_authcopy_clist                       
-  }
-  \rvnlatex_createblock:nn { \l__authblock_authcopy_clist } {         % create_block(cl, n)
-    \l__authblock_count_int 
-  }
-}
+\clist_new:N \l__authblock_authcopy_clist                             % var cl: clist
+\int_new:N \l__authblock_count_int                                    % var i: int
 
 % | Creates an author block.
 % |
@@ -114,8 +69,22 @@
 % |
 % | Arguments:
 % |   #1: the list of authors.
-% |   #2: the size of the list of authors.
-\cs_new_protected:Npn \rvnlatex_createblock:nn #1 #2 {
+\cs_new_protected:Npn \latexito_authorblock:x #1 {
+  \clist_set:Nx \l__authblock_authcopy_clist { #1 }                   % cl = metadata[author]
+  \int_set:Nn \l__authblock_count_int {                               % n = cl.size
+    \clist_count:N \l__authblock_authcopy_clist                       
+  }
+  \latexito_createblock:nn { \l__authblock_authcopy_clist } {         % create_block(cl, n)
+    \l__authblock_count_int 
+  }
+}
+
+% | Creates a block to arrange a list in columns.
+% |
+% | Arguments:
+% |   #1: the list.
+% |   #2: the size of the list.
+\cs_new_protected:Npn \latexito_createblock:nn #1 #2 {
   \begin{center}
     \int_compare:nNnTF { 0 } = {#2} { } {                             % if (n == 0) { } 
       \int_compare:nNnTF { 1 } = {#2} {                               % else if (n == 1):
@@ -130,16 +99,8 @@
           \centering\l__createblock_second_str                        % centered to the right
         \end{minipage}
         \vspace{0.5cm}                                                % add vertical space
-        \rvnlatex_createblock:nn {#1} { #2 - 2 }                      % create_block(cl, n - 2)
+        \latexito_createblock:nn {#1} { #2 - 2 }                      % create_block(cl, n - 2)
       }
     }
   \end{center}
 }
-
-% endregion
-\ExplSyntaxOff
-
-% region : Theorem Styles
-\theoremstyle{definition}
-\newtheorem{definition}{Definición}[section]
-% endregion

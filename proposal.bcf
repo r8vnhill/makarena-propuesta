@@ -2344,17 +2344,22 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">wiki-evaluation-function</bcf:citekey>
-    <bcf:citekey order="2">wiki-zero-sum-game</bcf:citekey>
-    <bcf:citekey order="3">wiki-minimax</bcf:citekey>
-    <bcf:citekey order="3">neumann1928theorie</bcf:citekey>
-    <bcf:citekey order="3">fan1953minimax</bcf:citekey>
-    <bcf:citekey order="0" nocite="1">*</bcf:citekey>
-    <bcf:citekey order="4">wiki-evaluation-function</bcf:citekey>
-    <bcf:citekey order="5">wiki-zero-sum-game</bcf:citekey>
-    <bcf:citekey order="6">wiki-minimax</bcf:citekey>
-    <bcf:citekey order="7">neumann1928theorie</bcf:citekey>
-    <bcf:citekey order="8">fan1953minimax</bcf:citekey>
+    <bcf:citekey order="1">noauthor_evaluation_2022</bcf:citekey>
+    <bcf:citekey order="2">noauthor_zero-sum_2022</bcf:citekey>
+    <bcf:citekey order="3">noauthor_minimax_nodate</bcf:citekey>
+    <bcf:citekey order="3">fan_minimax_1953</bcf:citekey>
+    <bcf:citekey order="4">holland_adaptation_1992</bcf:citekey>
+    <bcf:citekey order="4">ahvanooey_survey_2019</bcf:citekey>
+    <bcf:citekey order="5">langdon_genetic_1998</bcf:citekey>
+    <bcf:citekey order="6">poli_field_2008</bcf:citekey>
+    <bcf:citekey order="7">noauthor_evaluation_2022</bcf:citekey>
+    <bcf:citekey order="8">noauthor_zero-sum_2022</bcf:citekey>
+    <bcf:citekey order="9">noauthor_minimax_nodate</bcf:citekey>
+    <bcf:citekey order="10">fan_minimax_1953</bcf:citekey>
+    <bcf:citekey order="11">holland_adaptation_1992</bcf:citekey>
+    <bcf:citekey order="12">ahvanooey_survey_2019</bcf:citekey>
+    <bcf:citekey order="13">langdon_genetic_1998</bcf:citekey>
+    <bcf:citekey order="14">poli_field_2008</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">

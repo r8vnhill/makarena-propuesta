@@ -1,0 +1,24 @@
+\subsubsection{Algoritmos genéticos}
+  Los \textit{algoritmos genéticos}\cite{holland_adaptation_1992, ahvanooey_survey_2019} son una 
+  clase de algoritmos evolutivos que utilizan una \textit{población de individuos} para resolver un 
+  problema.
+  En este contexto, los individuos son una secuencia de valores que representan una 
+  \textbf{solución al problema}.
+  A cada individuo se le asigna una \textbf{aptitud} (\textit{fitness}) que es un valor numérico que 
+  representa la calidad de la solución, de esta forma podremos discriminar qué soluciones son más
+  apta para resolver el problema.
+
+  Específicamente, los algoritmos genéticos pueden definirse de la siguiente forma:
+  \begin{enumerate}
+    \item Se crea una población inicial de soluciones aleatorias.
+    \item Se seleccionan pares de individuos siguiendo alguna \textit{estrategia de 
+      selección}.
+    \item Se cruzan los pares de individuos siguiendo algún \textit{operador de cruza} para 
+      obtener nuevos individuos (hijos).
+    \item Se mutan los nuevos individuos siguiendo algún \textit{operador de mutación} y una 
+      \textit{tasa de mutación}.\footnote{Probabilidad (usualmente baja) de que un individuo mute.}
+    \item Se evalúa la solución más apta de la nueva población respecto a un criterio de aceptación
+      (e.g., margen de error).
+      Si se cumple el criterio, se termina el algoritmo, si no, se vuelve al paso 2.
+  \end{enumerate}
+  
