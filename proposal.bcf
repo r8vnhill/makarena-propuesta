@@ -2344,22 +2344,38 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">noauthor_evaluation_2022</bcf:citekey>
-    <bcf:citekey order="2">noauthor_zero-sum_2022</bcf:citekey>
-    <bcf:citekey order="3">noauthor_minimax_nodate</bcf:citekey>
+    <bcf:citekey order="1">turing_icomputing_1950</bcf:citekey>
+    <bcf:citekey order="2">v_neumann_zur_1928</bcf:citekey>
+    <bcf:citekey order="3">v_neumann_zur_1928</bcf:citekey>
     <bcf:citekey order="3">fan_minimax_1953</bcf:citekey>
-    <bcf:citekey order="4">holland_adaptation_1992</bcf:citekey>
-    <bcf:citekey order="4">ahvanooey_survey_2019</bcf:citekey>
-    <bcf:citekey order="5">langdon_genetic_1998</bcf:citekey>
-    <bcf:citekey order="6">poli_field_2008</bcf:citekey>
-    <bcf:citekey order="7">noauthor_evaluation_2022</bcf:citekey>
-    <bcf:citekey order="8">noauthor_zero-sum_2022</bcf:citekey>
-    <bcf:citekey order="9">noauthor_minimax_nodate</bcf:citekey>
-    <bcf:citekey order="10">fan_minimax_1953</bcf:citekey>
-    <bcf:citekey order="11">holland_adaptation_1992</bcf:citekey>
-    <bcf:citekey order="12">ahvanooey_survey_2019</bcf:citekey>
-    <bcf:citekey order="13">langdon_genetic_1998</bcf:citekey>
-    <bcf:citekey order="14">poli_field_2008</bcf:citekey>
+    <bcf:citekey order="3">maschler_game_2013</bcf:citekey>
+    <bcf:citekey order="3">thekumparampil_efficient_2019</bcf:citekey>
+    <bcf:citekey order="3">noauthor_minimax_2022</bcf:citekey>
+    <bcf:citekey order="4">shannon_programming_1988</bcf:citekey>
+    <bcf:citekey order="5">charles_r_dyer_cs_nodate</bcf:citekey>
+    <bcf:citekey order="6">noauthor_evaluation_2022</bcf:citekey>
+    <bcf:citekey order="7">noauthor_zero-sum_2022</bcf:citekey>
+    <bcf:citekey order="8">noauthor_minimax_nodate</bcf:citekey>
+    <bcf:citekey order="8">fan_minimax_1953</bcf:citekey>
+    <bcf:citekey order="9">holland_adaptation_1992</bcf:citekey>
+    <bcf:citekey order="9">ahvanooey_survey_2019</bcf:citekey>
+    <bcf:citekey order="10">langdon_genetic_1998</bcf:citekey>
+    <bcf:citekey order="11">poli_field_2008</bcf:citekey>
+    <bcf:citekey order="12">turing_icomputing_1950</bcf:citekey>
+    <bcf:citekey order="13">v_neumann_zur_1928</bcf:citekey>
+    <bcf:citekey order="14">fan_minimax_1953</bcf:citekey>
+    <bcf:citekey order="15">maschler_game_2013</bcf:citekey>
+    <bcf:citekey order="16">thekumparampil_efficient_2019</bcf:citekey>
+    <bcf:citekey order="17">noauthor_minimax_2022</bcf:citekey>
+    <bcf:citekey order="18">shannon_programming_1988</bcf:citekey>
+    <bcf:citekey order="19">charles_r_dyer_cs_nodate</bcf:citekey>
+    <bcf:citekey order="20">noauthor_evaluation_2022</bcf:citekey>
+    <bcf:citekey order="21">noauthor_zero-sum_2022</bcf:citekey>
+    <bcf:citekey order="22">noauthor_minimax_nodate</bcf:citekey>
+    <bcf:citekey order="23">holland_adaptation_1992</bcf:citekey>
+    <bcf:citekey order="24">ahvanooey_survey_2019</bcf:citekey>
+    <bcf:citekey order="25">langdon_genetic_1998</bcf:citekey>
+    <bcf:citekey order="26">poli_field_2008</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">
