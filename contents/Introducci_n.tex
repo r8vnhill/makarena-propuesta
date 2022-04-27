@@ -1,23 +1,24 @@
 \section{Introducción}
-  El concepto de \textit{máquinas que aprenden} fue propuesta por primera vez \textit{Alan Turing} 
-  en 1950 
-  con una simple pregunta: \enquote{¿Pueden las máquinas pensar?} \cite{turing_icomputing_1950}.
+  El concepto de \textit{máquinas que aprenden} fue propuesto por primera vez por \textit{Alan 
+  Turing} en 1950 con una simple pregunta: \enquote{¿Pueden las máquinas pensar?} 
+  \autocite{turingCOMPUTINGMACHINERYINTELLIGENCE1950}.
   Siguiendo esa pregunta, no es descabellado preguntarse: \enquote{¿Puede un computador jugar como 
   una persona?}
 
   El estudio de \textit{teoría de juegos} se le atribuye a \textit{von Neumann} en su paper de 
-  1928 \cite{v_neumann_zur_1928} y desde entonces se ha desarrollado como un área de investigación.
+  1928 \autocite{v.neumannZurTheorieGesellschaftsspiele1928} y desde entonces se ha desarrollado como un área de investigación.
   Entre los avances de la teoría de juegos se encuentra el desarrollo de algoritmos capaces de 
   idear estrategias similares a las de los jugadores humanos, llamaremos a estos 
   \enquote{\textit{jugadores artificiales}}.
 
   En este documento nos centraremos en un algoritmo en particular, \textit{Minimax}, debido a que ha
-  sido ampliamente estudiado y utilizado \cite{v_neumann_zur_1928,fan_minimax_1953,
-  maschler_game_2013,thekumparampil_efficient_2019,noauthor_minimax_2022}.
+  sido ampliamente estudiado y utilizado \autocite{v.neumannZurTheorieGesellschaftsspiele1928,
+  fanMinimaxTheorems1953,maschlerGameTheory2013,thekumparampilEfficientAlgorithmsSmooth2019,
+  Minimax2022}.
   Sin embargo, este algoritmo depende de una \textit{función de evaluación} que otorga un valor
   numérico a cada estado del juego para discriminar qué jugada es \enquote{mejor} que otra, pero 
-  esta función se desprende de estudiar en detalle el juego \cite{shannon_programming_1988} o por 
-  \enquote{tanteo} dado que la función de evaluación es \textbf{específica del dominio} 
-  \cite{charles_r_dyer_cs_nodate}.
+  esta función se desprende de estudiar en detalle el juego 
+  \autocite{shannonProgrammingComputerPlaying1988a} o por \enquote{tanteo} dado que la función de 
+  evaluación es \textbf{específica del dominio}\autocite{dyerCS540Lecture}.
   Este trabajo propone una manera automática de encontrar la función de evaluación del estado del
   juego sin importar el dominio de éste.
