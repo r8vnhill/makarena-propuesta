@@ -1,7 +1,27 @@
 \section{Estado del arte}
   \subsection{\textit{Artificial Ant Problem}}
     El \textbf{problema de las hormigas artificiales} \autocite{kozaGeneticProgrammingMeans1994} es 
-    un problema que busca encontrar un programa que, al ser ejecutado para una colonia de hormigas, 
-    les permite encontrar comida, llevarla de vuelta a la colonia y dejar feromonas en el camino 
-    para guiar a otras hormigas.
- 
+    un problema que busca encontrar un programa que, al ser ejecutado para una hormiga le permita 
+    encontrar toda la comida en un entorno dado, con una cantidad limitada de movimientos.
+    En \autocite{kozaGeneticProgrammingMeans1994}, \textit{Koza} propone una solución al problema
+    utilizando programación genética para encontrar un programa que maneje a la hormiga.
+    Para esto, se definen las primitivas \cite{deapprojectArtificialAntProblem}:
+    
+    \begin{itemize}
+      \item \mintinline{kotlin}{if (foodAhead) { child1() } else { child2() }}
+      \item \mintinline{kotlin}{moveForward()}
+      \item \mintinline{kotlin}{turnLeft()}
+      \item \mintinline{kotlin}{turnRight()}
+    \end{itemize}
+
+    De esta forma, los programas que se generan mediante GP podrá moverse en 3 direcciones y 
+    verificar si tiene comida en frente.
+
+    La \textit{función de evaluación} simplemente contará la cantidad de comida acumulada por la 
+    hormiga luego de una cierta cantidad de movimientos.
+    De esta forma, el \textit{fitness} del programa será directamente proporcional a dicha cantidad
+    de comida.
+    Una implementación completa se puede encontrar en \cite{fortinDeapAntPy2022}.
+  
+  \subsection{Potencial de adaptabilidad}
+    
