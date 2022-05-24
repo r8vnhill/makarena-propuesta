@@ -1,18 +1,9 @@
- 
 \section{Planteamiento del problema}
-  Esta sección introducirá varios conceptos necesarios para plantear el problema, y para esto se 
-  dividirán las definiciones en dos partes: \textit{Teoría de juegos} y \textit{Algoritmos 
-  evolutivos}.
-  
-  \subsection{Teoría de juegos}    
-    \subimport{Teor_a_de_juegos/}{Funci_n_de_evaluaci_n}
-    \subimport{Teor_a_de_juegos/}{Juegos_de_suma_cero.tex}
-    \subimport{Teor_a_de_juegos/}{Minimax.tex}
-  
-  \subsection{Algoritmos evolutivos}
-    \subimport{Algoritmos_evolutivos/}{Algoritmos_gen_ticos.tex}
-    \subimport{Algoritmos_evolutivos/}{Programaci_n_gen_tica.tex}
-
-  
-    
-  
+  Si bien el \textit{algoritmo Minimax} ha sido ampliamente estudiado y se ha demostrado que es una
+  solución óptima para problemas de estrategia, no existe una manera estándar de encontrar una
+  función de evaluación para \textit{Minimax} que sea óptima para todos los problemas de estrategia
+  \autocite{dyerCS540Lecture}.
+  Más aún, incluso los juegos para los que el algoritmo ha mostrado resultados favorables no tienen
+  una función de evaluación óptima conocida \autocite{shannonProgrammingComputerPlaying1988}.
+  Esto muestra un claro problema para desarrollar \textit{jugadores artificiales} en \textit{video 
+  juegos}.

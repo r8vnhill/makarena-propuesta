@@ -1,7 +1,62 @@
 \section{Estado del arte}
   \subsection{\textit{Artificial Ant Problem}}
-    El \textbf{problema de las hormigas artificiales} \autocite{kozaGeneticProgrammingMeans1994} es 
-    un problema que busca encontrar un programa que, al ser ejecutado para una colonia de hormigas, 
-    les permite encontrar comida, llevarla de vuelta a la colonia y dejar feromonas en el camino 
-    para guiar a otras hormigas.
+    El \textbf{problema de las hormigas artificiales} 
+    \autocite{jeffersonGenesysSystemEvolution1990,kozaGeneticProgrammingMeans1994a} es un problema 
+    que busca encontrar un programa que, al ser 
+    ejecutado para una hormiga, les permite encontrar toda la comida en una grilla con una cantidad 
+    máxima de movimientos, considerando que la comida esté distribuida de acuerdo a un patrón.
+
+    En este caso, se espera que el programa sea capaz de reconocer los patrones de comida para 
+    encontrarla, podemos interpretar que este problema es un juego de estrategia de un jugador.
+    Este problema puede ser reinterpretado como un juego de dos jugadores donde hay un adversario
+    que no puede realizar movimientos y cada pieza de comida es un recurso; dicho de otra forma:
+    el adversario tiene tantos recursos como la cantidad de comida que la hormiga aún no encuentra.
+    De esta forma, el problema de la hormiga se reduce a un \textit{juego de suma zero} de dos 
+    jugadores, por lo que encontrar una solución para este problema es equivalente a deducir una
+    función de evaluación para \textit{Minimax}.
+    
+    En \cite{kozaGeneticProgrammingMeans1994a} \textit{Koza} propone una solución al problema de las
+    hormigas artificiales que utiliza \textit{programación genética} para generar un programa con 
+    las primitivas:
+    \begin{itemize}
+      \item \textit{Moverse hacia el frente}.
+      \item \textit{Girar a la derecha}.
+      \item \textit{Girar a la izquierda}.
+      \item \textit{Comprobar} si tiene comida en la casilla del frente.
+      \item \textit{Programas o funciones} de 2 ó 3 parámetros.
+    \end{itemize}
  
+    Sin embargo, si bien esta solución presentó resultados positivos, un análisis más exhaustivo
+    mostró que la solución no es óptima \autocite{kuscuEvolvingGeneralisedBehaviour1998}.
+    Estos estudios mostraron que la solución propuesta presenta un \textit{sesgo evolutivo} que
+    evita la generalización de ésta a otros escenarios, principalmente porque no es capaz de
+    encontrar una solución óptima para grillas que difieran de los datos con que se entrenó a la
+    hormiga.
+    Más aún, este problema de generalización \textbf{es común} en GP.
+
+    Las siguientes secciones presentan soluciones a este problema de generalización para casos 
+    generales y se plantearán como alternativas a la solución original de \textit{Koza}.
+
+  \subsection{Regresión simbólica}
+    \label{sec:regresion-simb}
+    Dado que lo que buscamos es encontrar una función de evaluación, podemos reducir, tanto el 
+    problema de la hormiga como la deducción de la función de evaluación, a un problema de regresión
+    simbólica.
+    El tópico de \textit{Programación Genética para Regresión Simbólica} (GPSR) se ha desarrollado 
+    ampliamente para buscar soluciones que puedan ser generalizadas para resolver el problema que se
+    planteó en la sección anterior.
+
+    Un problema común que limita la capacidad de generalización de la regresión simbólica es que
+    el modelo de GP tiende a aprender modelos demasiado complejos, estos modelos generan 
+    soluciones específicas al dominio del set de datos con el que se entrenó (impidiendo la 
+    generalización de la solución) \cite{raymondMultiobjectiveGeneticProgramming2021}.
+
+    En este tópico se han propuesto múltiples soluciones, Raymond et. al. 
+    \cite{raymondAdaptiveWeightedSplines2020,raymondMultiobjectiveGeneticProgramming2021} proponen
+    una solución de interés para este trabajo ya que presenta una generalización con resultados
+    favorables además de evitar que el modelo de GP aprenda modelos demasiado complejos.
+    Para esto los autores utilizan una representación alternativa a la representación clásica de
+    GP utilizando \textit{Splines} en lugar de árboles para representar el modelo de la solución.
+    
+  \subsection{\textit{Deep Learning} en videojuegos}
+    

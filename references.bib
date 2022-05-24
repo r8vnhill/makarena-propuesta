@@ -11,7 +11,8 @@
   urldate = {2022-04-20},
   abstract = {This work considers the sample and computational complexity of obtaining an ϵϵ\textbackslash epsilon-optimal policy in a discounted Markov Decision Process (MDP), given only access to a generative model. In this model, the learner accesses the underlying transition model via a sampling oracle that provides a sample of the next state, when given any state-action pair as input. We are interested in a basic and unresolved question in model based planning: is this naïve “plug-in” approach — where we build the maximum likelihood estimate of the transition model in the MDP from observations and then find an optimal policy in this empirical MDP — non-asymptotically, minimax optimal? Our main result answers this question positively. With regards to computation, our result provides a simpler approach towards minimax optimal planning: in comparison to prior model-free results,  we show that using \textbackslash emph\{any\} high accuracy, black-box planning oracle in the empirical model suffices to obtain the minimax error rate. The key proof technique uses a leave-one-out analysis, in a novel “absorbing MDP” construction, to decouple the statistical dependency issues that arise in the analysis of model-based planning; this construction may be helpful more generally.},
   eventtitle = {Conference on {{Learning Theory}}},
-  langid = {english}
+  langid = {english},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\5UA9NSH3\\Agarwal et al. - 2020 - Model-Based Reinforcement Learning with a Generati.pdf}
 }
 
 @article{ahvanooeySurveyGeneticProgramming2019,
@@ -28,7 +29,8 @@
   url = {https://www.koreascience.or.kr/article/JAKO201919761177651.page},
   urldate = {2022-04-20},
   abstract = {Genetic Programming (GP) is an intelligence technique whereby computer programs are encoded as a set of genes which are evolved utilizing a Genetic Algorithm (GA). In other words, the GP employs novel optimization techniques to modify computer programs; imitating the way humans develop programs by progressively re-writing them for solving problems automatically. Trial programs are frequently altered in the search for obtaining superior solutions due to the base is GA. These are evolutionary search techniques inspired by biological evolution such as mutation, reproduction, natural selection, recombination, and survival of the fittest. The power of GAs is being represented by an advancing range of applications; vector processing, quantum computing, VLSI circuit layout, and so on. But one of the most significant uses of GAs is the automatic generation of programs. Technically, the GP solves problems automatically without having to tell the computer specifically how to process it. To meet this requirement, the GP utilizes GAs to a "population" of trial programs, traditionally encoded in memory as tree-structures. Trial programs are estimated using a "fitness function" and the suited solutions picked for re-evaluation and modification such that this sequence is replicated until a "correct" program is generated. GP has represented its power by modifying a simple program for categorizing news stories, executing optical character recognition, medical signal filters, and for target identification, etc. This paper reviews existing literature regarding the GPs and their applications in different scientific fields and aims to provide an easy understanding of various types of GPs for beginners.},
-  langid = {english}
+  langid = {english},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\FARE8WAA\\Ahvanooey et al. - 2019 - A Survey of Genetic Programming and Its Applicatio.pdf}
 }
 
 @article{arslanMultiHiveArtificial2019,
@@ -53,11 +55,12 @@
   annotation = {MAG ID: 2029700197}
 }
 
-@incollection{banzhafGeneticProgrammingIntroduction1998,
+@incollection{banzhafGeneticProgrammingIntroduction1998a,
   title = {Genetic {{Programming}}: {{An Introduction}} on the {{Automatic Evolution}} of Computer Programs and Its {{Applications}}},
   shorttitle = {Genetic {{Programming}}},
   author = {Banzhaf, Wolfgang and Nordin, Peter and Keller, Robert and Francone, Frank},
-  date = {1998-01-01}
+  date = {1998-01-01},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\HHJ8UHMQ\\Banzhaf et al. - 1998 - Genetic Programming An Introduction on the Automa.pdf}
 }
 
 @article{cramerRepresentationAdaptiveGeneration1985,
@@ -67,7 +70,16 @@
   doi = {10.5555/645511.657085},
   url = {http://www.cs.ucl.ac.uk/staff/W.Langdon/ftp/papers/icga1985/icga85_cramer.pdf},
   abstract = {An adaptive system for generating short sequential computer functions is described. The created functions are written in the simple \{"\}number-string\{"\} language JB, and in TB, a modified version of JB with a tree-like structure. These languages have the feature that they can be used to represent well-formed, useful computer programs while still being amenable to suitably defined genetic operators. The system is used to produce two-input, single-output multiplication functions that are concise and well-defined. Future work, dealing with extensions to more complicated functions and generalizations of the techniques, is also discussed.},
-  issue = {Proceedings of an International Conference on Genetic Algorithms and the Applications}
+  issue = {Proceedings of an International Conference on Genetic Algorithms and the Applications},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\JWC3SFUZ\\icga85_cramer.pdf}
+}
+
+@online{deapprojectArtificialAntProblem,
+  title = {Artificial {{Ant Problem}} — {{DEAP}} 1.3.1 Documentation},
+  author = {{DEAP Project}},
+  url = {https://deap.readthedocs.io/en/master/examples/gp_ant.html},
+  urldate = {2022-04-27},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\2B8B62P3\\gp_ant.html}
 }
 
 @inproceedings{defreitasEvolvingControllersMario2018,
@@ -87,7 +99,8 @@
   title = {{{CS}} 540 {{Lecture Notes}}: {{Game Playing}}},
   author = {Dyer, Charles R.},
   url = {https://pages.cs.wisc.edu/~dyer/cs540/notes/games.html},
-  urldate = {2022-04-26}
+  urldate = {2022-04-26},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\RFQQVWYV\\games.html}
 }
 
 @article{espejoSurveyApplicationGenetic2010,
@@ -113,7 +126,8 @@
   urldate = {2022-04-18},
   abstract = {An evaluation function, also known as a heuristic evaluation function or static evaluation function, is a function used by game-playing computer programs to estimate the value or goodness of a position (usually at a leaf or terminal node) in a game tree. Most of the time, the value is either a real number or a quantized integer, often in nths of the value of a playing piece such as a stone in go or a pawn in chess, where n may be tenths, hundredths or other convenient fraction, but sometimes, the value is an array of three values in the unit interval, representing the win, draw, and loss percentages of the position.  There do not exist analytical or theoretical models for evaluation functions for unsolved games, nor are such functions entirely ad-hoc.  The composition of evaluation functions is determined empirically by inserting a candidate function into an automaton and evaluating its subsequent performance.  A significant body of evidence now exists for several games like chess, shogi and go as to the general composition of evaluation functions for them. Games in which game playing computer programs employ evaluation functions include chess, go, shogi (Japanese chess), othello, hex, backgammon, and checkers. In addition, with the advent of programs such as MuZero, computer programs also use evaluation functions to play video games, such as those from the Atari 2600. Some games like tic-tac-toe are strongly solved, and do not require search or evaluation because a discrete solution tree is available.},
   langid = {english},
-  annotation = {Page Version ID: 1079533564}
+  annotation = {Page Version ID: 1079533564},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\MQ77D2FG\\Evaluation_function.html}
 }
 
 @article{fanMinimaxTheorems1953,
@@ -130,7 +144,8 @@
   issn = {0027-8424},
   url = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1063722/},
   urldate = {2022-04-18},
-  pmcid = {PMC1063722}
+  pmcid = {PMC1063722},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\SRJ7LJ63\\Fan - 1953 - Minimax Theorems.pdf}
 }
 
 @article{forsythBEAGLEDARWINIANAPPROACH1981,
@@ -146,7 +161,20 @@
   url = {https://www.emerald.com/insight/content/doi/10.1108/eb005587/full/html},
   urldate = {2022-04-20},
   abstract = {BEAGLE (Biological Evolutionary Algorithm Generating Logical Expressions) is a computer package for producing decision‐rules by induction from a database. It works on the principle of “Naturalistic Selection” whereby rules that fit the data badly are “killed off” and replaced by “mutations” of better rules or by new rules created by “mating” two better adapted rules. The rules are Boolean expressions represented by tree structures. The software consists of two               Pascal               programs,               HERB               (Heuristic Evolutionary Rule Breeder) and               LEAF               (Logical Evaluator And Forecaster).               HERB               improves a given starting set of rules by running over several simulated generations.               LEAF               uses the rules to classify samples from a database where the correct membership may not be known. Preliminary tests on three different databases have been carried out—on hospital admissions (classing heart patients as deaths or survivors), on athletic physique (classing Olympic finalists as long‐distance runners or sprinters) and on football results (categorizing games into draws and non‐draws). It appears from the tests that the method works better than the standard discriminant analysis technique based on a linear discriminant function, and hence that this long‐neglected approach warrants further investigation.},
-  langid = {english}
+  langid = {english},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\WTRF4Z4A\\Forsyth - 1981 - BEAGLE —A DARWINIAN APPROACH TO PATTERN REC.pdf}
+}
+
+@software{fortinDeapAntPy2022,
+  title = {Deap/Ant.Py at B8513fc16fa05b2fe6b740488114a7f0c5a1dd06 · {{DEAP}}/Deap},
+  date = {2022-04-27T18:15:05Z},
+  origdate = {2014-05-21T20:07:39Z},
+  url = {https://github.com/DEAP/deap/blob/b8513fc16fa05b2fe6b740488114a7f0c5a1dd06/examples/gp/ant.py},
+  urldate = {2022-04-27},
+  abstract = {Distributed Evolutionary Algorithms in Python},
+  editora = {Fortin, Félix-Antoine and Elliston, Ben},
+  editoratype = {collaborator},
+  organization = {{Distributed Evolutionary Algorithms in Python}}
 }
 
 @inreference{GeneticProgramming2022,
@@ -157,7 +185,8 @@
   urldate = {2022-04-20},
   abstract = {In artificial intelligence, genetic programming (GP) is a technique of evolving programs, starting from a population of unfit (usually random) programs, fit for a particular task by applying operations analogous to natural genetic processes to the population of programs. The operations are: selection of the fittest programs for reproduction (crossover) and mutation according to a predefined fitness measure, usually proficiency at the desired task.  The crossover operation involves swapping random parts of selected pairs (parents) to produce new and different offspring that become part of the new generation of programs.  Mutation involves substitution of some random part of a program with some other random part of a program. Some programs not selected for reproduction are copied from the current generation to the new generation. Then the selection and other operations are recursively applied to the new generation of programs. Typically, members of each new generation are on average more fit than the members of the previous generation, and the best-of-generation program is often better than the best-of-generation programs from previous generations.  Termination of the evolution usually occurs when some individual program reaches a predefined proficiency or fitness level. It may and often does happen that a particular run of the algorithm results in premature convergence to some local maximum which is not a globally optimal or even good solution.  Multiple runs (dozens to hundreds) are usually necessary to produce a very good result.  It may also be necessary to increase the starting population size and variability of the individuals to avoid pathologies.},
   langid = {english},
-  annotation = {Page Version ID: 1083071637}
+  annotation = {Page Version ID: 1083071637},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\SSU6Y9EI\\Genetic_programming.html}
 }
 
 @article{haeriImprovingGPGeneralization2015,
@@ -184,6 +213,16 @@
   annotation = {OCLC: 1235962848}
 }
 
+@article{jeffersonGenesysSystemEvolution1990,
+  title = {The {{Genesys System}}: {{Evolution}} as a {{Theme}} in {{Artificial Life}}},
+  shorttitle = {The {{Genesys System}}},
+  author = {Jefferson, David and Collins, Rob},
+  date = {1990-01-01},
+  journaltitle = {Artificial Life - ALIFE},
+  shortjournal = {Artificial Life - ALIFE},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\N9Z9DSS8\\Jefferson and Collins - 1990 - The Genesys System Evolution as a Theme in Artifi.pdf}
+}
+
 @article{kellyScalingGeneticProgramming2018,
   title = {Scaling {{Genetic Programming}} to {{Challenging Reinforcement Tasks}} through {{Emergent Modularity}}},
   author = {Kelly, Stephen},
@@ -192,7 +231,8 @@
   urldate = {2022-04-20},
   abstract = {Algorithms that learn through environmental interaction and delayed rewards, or reinforcement learning, increasingly face the challenge of scaling to dynamic, high-dimensional environments. Video games model these types of real-world decision-making and control scenarios while being simple enough to implement within experiments. This work demonstrates how emergent modularity and open-ended evolution allow genetic programming (GP) to discover strategies for difficult gaming scenarios while maintaining relatively low model complexity. Two related learning algorithms are considered: Policy Trees and Tangled Program Graphs (TPG).     In the case of Policy Trees, a methodology for transfer learning is proposed which specifically leverages both structural and behavioural modularity in the learner representation. The utility of the approach is empirically evaluated in two challenging task domains: RoboCup Soccer and Ms. Pac-Man. In RoboCup, decision-making policies are first evolved for simple subtasks and then reused within a policy hierarchy in order to learn the more complex task of Half-Field Offense. The same methodology is applied to Ms. Pac-Man, in which case the use of task-agnostic diversity maintenance enables the automatic discovery of suitable sub-policies, removing the need for a prior human-specified task decomposition. In both task domains, the final GP decision-making policies reach state-of-the-art levels of play while being significantly less complex than solutions from temporal difference methods and neuroevolution.       TPG takes a more open-ended approach to modularity, emphasizing the ability to adaptively complexify policies through interaction with the task environment. The challenging Atari video game environment is used to show that this approach builds decision-making policies that broadly match the quality of several deep learning methods while being several orders of magnitude less computationally demanding, both in terms of sample efficiency and model complexity. Finally, the approach is capable of evolving solutions to multiple game titles simultaneously with no additional computational cost. In this case, agent behaviours for an individual game as well as single agents capable of playing up to 5 games emerge from the same evolutionary run.},
   langid = {english},
-  annotation = {Accepted: 2018-06-21T16:04:28Z}
+  annotation = {Accepted: 2018-06-21T16:04:28Z},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\QGC6VSI2\\Kelly - 2018 - Scaling Genetic Programming to Challenging Reinfor.pdf}
 }
 
 @incollection{kozaGeneticProgramming2005,
@@ -213,7 +253,7 @@
   keywords = {Crossover Point,Fitness Measure,Genetic Operation,Genetic Programming,Preparatory Step}
 }
 
-@article{kozaGeneticProgrammingMeans1994,
+@article{kozaGeneticProgrammingMeans1994a,
   title = {Genetic Programming as a Means for Programming Computers by Natural Selection},
   author = {Koza, John R.},
   date = {1994-06-01},
@@ -228,7 +268,8 @@
   urldate = {2022-04-22},
   abstract = {Many seemingly different problems in machine learning, artificial intelligence, and symbolic processing can be viewed as requiring the discovery of a computer program that produces some desired output for particular inputs. When viewed in this way, the process of solving these problems becomes equivalent to searching a space of possible computer programs for a highly fit individual computer program. The recently developed genetic programming paradigm described herein provides a way to search the space of possible computer programs for a highly fit individual computer program to solve (or approximately solve) a surprising variety of different problems from different fields. In genetic programming, populations of computer programs are genetically bred using the Darwinian principle of survival of the fittest and using a genetic crossover (sexual recombination) operator appropriate for genetically mating computer programs. Genetic programming is illustrated via an example of machine learning of the Boolean 11-multiplexer function and symbolic regression of the econometric exchange equation from noisy empirical data.},
   langid = {english},
-  keywords = {Boolean 11-multiplexer,Boolean 11-parity,crossover,econometric exchange equation,genetic algorithm,Genetic programming,hierarchical automatic function definition,symbolic regression}
+  keywords = {Boolean 11-multiplexer,Boolean 11-parity,crossover,econometric exchange equation,genetic algorithm,Genetic programming,hierarchical automatic function definition,symbolic regression},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\ZI82H9AP\\Koza - 1994 - Genetic programming as a means for programming com.pdf}
 }
 
 @patent{kozaNonlinearGeneticAlgorithms1990,
@@ -241,7 +282,8 @@
   url = {https://patents.google.com/patent/US4935877A/en},
   urldate = {2022-04-26},
   abstract = {The present invention is a non-linear genetic algorithm for problem solving. The iterative process of the present invention operates on a population of problem solving entities. First, the activated entities perform, producing results. Then the results are assigned values and associated with the producing entity. Next, entities having relatively high associated values are selected. The selected entities perform either crossover, reproduction, or permutation operations. Lastly, the newly created entities are added to the population.},
-  keywords = {crossover,entity,population,program,value}
+  keywords = {crossover,entity,population,program,value},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\BPC56MD3\\Koza - 1990 - Non-linear genetic algorithms for solving problems.pdf}
 }
 
 @inproceedings{kuscuEvolvingGeneralisedBehaviour1998,
@@ -259,7 +301,8 @@
   abstract = {This research aims to demonstrate that a solution for artificial ant problem [4] is very likely to be non-general and relying on the specific characteristics of the Santa Fe trail. It then presents a consistent method which promotes producing general solutions. Using the concepts of training and testing from machine learning research, the method can be useful in producing general behaviours for simulation environments.},
   isbn = {978-3-540-68515-9},
   langid = {english},
-  keywords = {Fitness Case,Genetic Programming,Genetic Programming System,Machine Learning Research,Perfect Performance}
+  keywords = {Fitness Case,Genetic Programming,Genetic Programming System,Machine Learning Research,Perfect Performance},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\JCSDRYCE\\kuscu1998.pdf.pdf}
 }
 
 @article{kuscuPromotingGeneralisationLearned1998,
@@ -269,7 +312,8 @@
   pages = {491--500},
   doi = {10.1007/bfb0056891},
   abstract = {Recently, growing numbers of research concentrate on robustness of the programs evolved using Genetic Programming (GP). While some of the researchers report on the brittleness of the solutions evolved, some others proposed methods of promoting robustness. It is important that these methods are not ad hoc and specific for a certain experimental setup. In this research, brittleness of solutions found for the artificial ant problem is reported and a new method promoting generalisation of the solutions in GP is presented.},
-  annotation = {MAG ID: 1598236549}
+  annotation = {MAG ID: 1598236549},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\C9MJKSIM\\kuscu1998.pdf.pdf}
 }
 
 @book{langdonFoundationsGeneticProgramming2013,
@@ -298,7 +342,8 @@
   urldate = {2022-04-20},
   abstract = {We consider nonconvex-concave minimax problems, minxmaxy∈Yf(x,y)minxmaxy∈Yf(x,y)\textbackslash min\_\{\textbackslash mathbf\{x\}\} \textbackslash max\_\{\textbackslash mathbf\{y\} \textbackslash in \textbackslash mathcal\{Y\}\} f(\textbackslash mathbf\{x\}, \textbackslash mathbf\{y\}), where fff is nonconvex in xx\textbackslash mathbf\{x\} but concave in yy\textbackslash mathbf\{y\} and YY\textbackslash mathcal\{Y\} is a convex and bounded set. One of the most popular algorithms for solving this problem is the celebrated gradient descent ascent (GDA) algorithm, which has been widely used in machine learning, control theory and economics. Despite the extensive convergence results for the convex-concave setting, GDA with equal stepsize can converge to limit cycles or even diverge in a general setting. In this paper, we present the complexity results on two-time-scale GDA for solving nonconvex-concave minimax problems, showing that the algorithm can find a stationary point of the function Φ(⋅):=maxy∈Yf(⋅,y)Φ(⋅):=maxy∈Yf(⋅,y)\textbackslash Phi(\textbackslash cdot) := \textbackslash max\_\{\textbackslash mathbf\{y\} \textbackslash in \textbackslash mathcal\{Y\}\} f(\textbackslash cdot, \textbackslash mathbf\{y\}) efficiently. To the best our knowledge, this is the first nonasymptotic analysis for two-time-scale GDA in this setting, shedding light on its superior practical performance in training generative adversarial networks (GANs) and other real applications.},
   eventtitle = {International {{Conference}} on {{Machine Learning}}},
-  langid = {english}
+  langid = {english},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\PAV4962F\\Lin et al. - 2020 - On Gradient Descent Ascent for Nonconvex-Concave M.pdf;C\:\\Users\\smfla\\Zotero\\storage\\QXJ5AMD9\\Lin et al. - 2020 - On Gradient Descent Ascent for Nonconvex-Concave M.pdf}
 }
 
 @inproceedings{linNearOptimalAlgorithmsMinimax2020,
@@ -313,7 +358,8 @@
   urldate = {2022-04-20},
   abstract = {This paper resolves a longstanding open question pertaining to the design of near-optimal first-order algorithms for smooth and strongly-convex-strongly-concave minimax problems. Current state-of-the-art first-order algorithms find an approximate Nash equilibrium using O\textasciitilde (κx+κy)O\textasciitilde (κx+κy)\textbackslash tilde\{O\}(\textbackslash kappa\_x+\textbackslash kappa\_y) or O\textasciitilde (min\{κxκy−−√,κx−−√κy\})O\textasciitilde (min\{κxκy,κxκy\})\textbackslash tilde\{O\}(\textbackslash text\{min\}\textbackslash\{\textbackslash kappa\_x\textbackslash sqrt\{\textbackslash kappa\_y\}, \textbackslash sqrt\{\textbackslash kappa\_x\}\textbackslash kappa\_y\textbackslash\})~ gradient evaluations, where κxκx\textbackslash kappa\_x and κyκy\textbackslash kappa\_y are the condition numbers for the strong-convexity and strong-concavity assumptions. A gap still remains between these results and the best existing lower bound Ω\textasciitilde (κxκy−−−−√)Ω\textasciitilde (κxκy)\textbackslash tilde\{\textbackslash Omega\}(\textbackslash sqrt\{\textbackslash kappa\_x\textbackslash kappa\_y\}).  This paper presents the first algorithm with O\textasciitilde (κxκy−−−−√)O\textasciitilde (κxκy)\textbackslash tilde\{O\}(\textbackslash sqrt\{\textbackslash kappa\_x\textbackslash kappa\_y\}) gradient complexity, matching the lower bound up to logarithmic factors. Our algorithm is designed based on an accelerated proximal point method and an accelerated solver for minimax proximal steps.  It can be easily extended to the settings of strongly-convex-concave, convex-concave, nonconvex-strongly-concave, and nonconvex-concave functions. This paper also presents algorithms that match or outperform all existing methods in these settings in terms of gradient complexity, up to logarithmic factors.},
   eventtitle = {Conference on {{Learning Theory}}},
-  langid = {english}
+  langid = {english},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\CDE97XGG\\Lin et al. - 2020 - Near-Optimal Algorithms for Minimax Optimization.pdf}
 }
 
 @inproceedings{linUnsupervisedVideoGame2021,
@@ -328,7 +374,8 @@
   urldate = {2022-04-20},
   abstract = {On playing video games, different players usually have their own playstyles. Recently, there have been great improvements for the video game AIs on the playing strength. However, past researches for analyzing the behaviors of players still used heuristic rules or the behavior features with the game-environment support, thus being exhausted for the developers to define the features of discriminating various playstyles. In this paper, we propose the first metric for video game playstyles directly from the game observations and actions, without any prior specification on the playstyle in the target game. Our proposed method is built upon a novel scheme of learning discrete representations that can map game observations into latent discrete states, such that playstyles can be exhibited from these discrete states. Namely, we measure the playstyle distance based on game observations aligned to the same states. We demonstrate high playstyle accuracy of our metric in experiments on some video game platforms, including TORCS, RGSK, and seven Atari games, and for different agents including rule-based AI bots, learning-based AI bots, and human players.},
   eventtitle = {Uncertainty in {{Artificial Intelligence}}},
-  langid = {english}
+  langid = {english},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\R3TG7ULW\\Lin et al. - 2021 - An unsupervised video game playstyle metric via st.pdf;C\:\\Users\\smfla\\Zotero\\storage\\V6RI6VGV\\Lin et al. - 2021 - An unsupervised video game playstyle metric via st.pdf}
 }
 
 @software{magarenacommunityMagarenaMagarena2022,
@@ -364,7 +411,8 @@
   urldate = {2022-04-18},
   abstract = {Minimax (sometimes MinMax, MM or saddle point) is a decision rule used in artificial intelligence, decision theory, game theory, statistics, and philosophy for minimizing the possible loss for a worst case (maximum loss) scenario.  When dealing with gains, it is referred to as "maximin"—to maximize the minimum gain.  Originally formulated for n-player zero-sum game theory, covering both the cases where players take alternate moves and those where they make simultaneous moves, it has also been extended to more complex games and to general decision-making in the presence of uncertainty.},
   langid = {english},
-  annotation = {Page Version ID: 1076761456}
+  annotation = {Page Version ID: 1076761456},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\EIIGI2V3\\Minimax.html}
 }
 
 @article{nicolauChoosingFunctionSets2021,
@@ -388,7 +436,8 @@
   location = {{[Morrisville, NC}},
   isbn = {978-1-4092-0073-4},
   langid = {english},
-  pagetotal = {233}
+  pagetotal = {233},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\6ZBSWSY4\\Riccardo Poli_ William B Langdon_ Nicholas F. McPhee - A Field Guide to Genetic Programming-Lulu.com (2011).pdf}
 }
 
 @article{qichenFeatureSelectionImprove2017,
@@ -449,6 +498,25 @@
   annotation = {MAG ID: 2901725080}
 }
 
+@inproceedings{raymondAdaptiveWeightedSplines2020,
+  title = {Adaptive Weighted Splines: A New Representation to Genetic Programming for Symbolic Regression},
+  shorttitle = {Adaptive Weighted Splines},
+  booktitle = {Proceedings of the 2020 {{Genetic}} and {{Evolutionary Computation Conference}}},
+  author = {Raymond, Christian and Chen, Qi and Xue, Bing and Zhang, Mengjie},
+  date = {2020-06-25},
+  series = {{{GECCO}} '20},
+  pages = {1003--1011},
+  publisher = {{Association for Computing Machinery}},
+  location = {{New York, NY, USA}},
+  doi = {10.1145/3377930.3390244},
+  url = {https://doi.org/10.1145/3377930.3390244},
+  urldate = {2022-04-29},
+  abstract = {Genetic Programming for Symbolic Regression is often prone to overfit the training data, resulting in poor generalization on unseen data. To address this issue, many pieces of research have been devoted to regularization via controlling the model complexity. However, due to the unstructured tree based representation of individuals the model complexity cannot be directly computed, rather approximation of the complexity must be taken. This paper proposes a new novel representation called Adaptive Weighted Splines which enables explicit control over the complexity of individuals using splines. The experimental results confirm that this new representation is significantly better than the tree-based representation at avoiding overfitting and generalizing on unseen data, demonstrating notably better and far more consistent generalization performances on all the benchmark problems. Further analysis also shows that in most cases, the new Genetic Programming method outperforms classical regression techniques such as Linear Regression, Support Vector Regression, K-Nearest Neighbour and Decision Tree Regression and performs competitively with state-of-the-art ensemble regression methods Random Forests and Gradient Boosting.},
+  isbn = {978-1-4503-7128-5},
+  keywords = {generalization,genetic programming,representation,spline,symbolic regression},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\F8WJQ9XG\\raymond2020.pdf.pdf}
+}
+
 @article{raymondMultiobjectiveGeneticProgramming2021,
   title = {Multi-Objective Genetic Programming for Symbolic Regression with the Adaptive Weighted Splines Representation},
   author = {Raymond, Christian and Chen, Qi and Xue, Bing and Zhang, Mengjie},
@@ -459,7 +527,7 @@
   annotation = {MAG ID: 3179367438}
 }
 
-@incollection{shannonProgrammingComputerPlaying1988a,
+@incollection{shannonProgrammingComputerPlaying1988,
   title = {Programming a {{Computer}} for {{Playing Chess}}},
   booktitle = {Computer {{Chess Compendium}}},
   author = {Shannon, Claude E.},
@@ -512,7 +580,8 @@
   volume = {32},
   publisher = {{Curran Associates, Inc.}},
   url = {https://proceedings.neurips.cc/paper/2019/hash/05d0abb9a864ae4981e933685b8b915c-Abstract.html},
-  urldate = {2022-04-20}
+  urldate = {2022-04-20},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\RQGEYLL9\\Thekumparampil et al. - 2019 - Efficient Algorithms for Smooth Minimax Optimizati.pdf}
 }
 
 @inproceedings{torradoDeepReinforcementLearning2018,
@@ -525,7 +594,8 @@
   doi = {10.1109/CIG.2018.8490422},
   abstract = {The General Video Game AI (GVGAI) competition and its associated software framework provides a way of benchmarking AI algorithms on a large number of games written in a domain-specific description language. While the competition has seen plenty of interest, it has so far focused on online planning, providing a forward model that allows the use of algorithms such as Monte Carlo Tree Search. In this paper, we describe how we interface GVGAI to the OpenAI Gym environment, a widely used way of connecting agents to reinforcement learning problems. Using this interface, we characterize how widely used implementations of several deep reinforcement learning algorithms fare on a number of GVGAI games. We further analyze the results to provide a first indication of the relative difficulty of these games relative to each other, and relative to those in the Arcade Learning Environment under similar conditions.},
   eventtitle = {2018 {{IEEE Conference}} on {{Computational Intelligence}} and {{Games}} ({{CIG}})},
-  keywords = {advantage actor critic,Benchmark testing,deep Q-learning,deep reinforcement learning,Games,general video game AI,Learning (artificial intelligence),Machine learning,OpenAI Gym,Planning,video game description language}
+  keywords = {advantage actor critic,Benchmark testing,deep Q-learning,deep reinforcement learning,Games,general video game AI,Learning (artificial intelligence),Machine learning,OpenAI Gym,Planning,video game description language},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\7A6CAVK6\\Torrado et al. - 2018 - Deep Reinforcement Learning for General Video Game.pdf}
 }
 
 @article{turingCOMPUTINGMACHINERYINTELLIGENCE1950,
@@ -540,7 +610,8 @@
   doi = {10.1093/mind/LIX.236.433},
   url = {https://academic.oup.com/mind/article/LIX/236/433/986238},
   urldate = {2022-04-20},
-  langid = {english}
+  langid = {english},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\CZUC5DWK\\http___www.cs.umbc.edu_471_papers_turing.pdf}
 }
 
 @article{uyImprovingGeneralisationAbility2010,
@@ -567,7 +638,8 @@
   doi = {10.1007/BF01448847},
   url = {http://link.springer.com/10.1007/BF01448847},
   urldate = {2022-04-24},
-  langid = {german}
+  langid = {german},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\V2R6JWQF\\vonNeumann.pdf}
 }
 
 @article{wangMultiobjectiveFeatureSelection2020,
@@ -594,7 +666,8 @@
   urldate = {2022-04-20},
   abstract = {Many tasks in modern machine learning can be formulated as finding equilibria in \textbackslash emph\{sequential\} games. In particular, two-player zero-sum sequential games, also known as minimax optimization, have received growing interest. It is tempting to apply gradient descent to solve minimax optimization given its popularity and success in supervised learning. However, it has been noted that naive application of gradient descent fails to find some local minimax and can converge to non-local-minimax points. In this paper, we propose \textbackslash emph\{Follow-the-Ridge\} (FR), a novel algorithm that provably converges to and only converges to local minimax. We show theoretically that the algorithm addresses the notorious rotational behaviour of gradient dynamics, and is compatible with preconditioning and \textbackslash emph\{positive\} momentum. Empirically, FR solves toy minimax problems and improves the convergence of GAN training compared to the recent minimax optimization algorithms.},
   archiveprefix = {arXiv},
-  keywords = {Computer Science - Machine Learning,Mathematics - Optimization and Control,Statistics - Machine Learning}
+  keywords = {Computer Science - Machine Learning,Mathematics - Optimization and Control,Statistics - Machine Learning},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\FRRCYB4L\\Wang et al. - 2019 - On Solving Minimax Optimization Locally A Follow-.pdf;C\:\\Users\\smfla\\Zotero\\storage\\ZLFWQ5BK\\1910.html}
 }
 
 @online{wilhelmstotterJeneticsJavaGenetic,
@@ -616,7 +689,8 @@
   urldate = {2022-04-18},
   abstract = {Zero-sum game is a mathematical representation in game theory and economic theory of a situation which involves two sides, where the result is an advantage for one side and an equivalent loss for the other.If the total gains of the participants are added up, and the total losses are subtracted, they will sum to zero. Thus, cutting a cake, where taking a more significant piece reduces the amount of cake available for others as much as it increases the amount available for that taker, is a zero-sum game if all participants value each unit of cake equally. Other examples of zero-sum games in daily life include games like poker, chess, and bridge where one person gains and another person loses, which results in a zero-net benefit for every player. In the markets and financial instruments, futures contracts and options are zero-sum games as well. Nevertheless, the situation like the stock market etc. is not a zero-sum game because investors could gain profit or loss from share price influences by profit forecasts or economic outlooks rather than gain profit from other investors' losses. In contrast, non-zero-sum describes a situation in which the interacting parties' aggregate gains and losses can be less than or more than zero. A zero-sum game is also called a strictly competitive game, while non-zero-sum games can be either competitive or non-competitive. Zero-sum games are most often solved with the minimax theorem which is closely related to linear programming duality, or with Nash equilibrium. Prisoner's Dilemma is a classical non-zero-sum game.},
   langid = {english},
-  annotation = {Page Version ID: 1081052640}
+  annotation = {Page Version ID: 1081052640},
+  file = {C\:\\Users\\smfla\\Zotero\\storage\\FJMN24P8\\Zero-sum_game.html}
 }
 
 @article{zhangRLGEPSymbolicRegression2021,

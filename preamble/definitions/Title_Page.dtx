@@ -1,5 +1,5 @@
-%% "Makarena" (c) by Ignacio Slater M.
-%% "Makarena" is licensed under a
+%% "LaTeX de Plutón" (c) by Ignacio Slater M.
+%% "LaTeX de Plutón" is licensed under a
 %% Creative Commons Attribution 4.0 International License.
 %% You should have received a copy of the license along with this
 %% work. If not, see <https://creativecommons.org/licenses/by/4.0/>.
@@ -24,10 +24,10 @@
 }
 
 % | Renders the logo of the document.
-\NewDocumentCommand { \inputlogo } { } {
+\NewDocumentCommand { \inputlogo } { o } {
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{ \getvmeta { logo } }
+    \includegraphics[height=#1]{ \getvmeta { logo } }
   \end{figure}
 }
 
@@ -38,6 +38,12 @@
   \keys_if_exist:nnT { ravenhill/latex/meta } { advisors } {          % if (advisors exists):
     \latexito_authorblock:x { \getvmeta { advisors } }                %   create_block(metadata[advisors], 1)
   }                                                                   
+}
+
+\NewDocumentCommand { \fullversion } { } { 
+  v \getvmeta { version }.
+  \getvmeta { build }.
+  \getvmeta { commit }
 }
 
 \NewDocumentCommand { \location } { } {
