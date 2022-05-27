@@ -1,0 +1,31 @@
+% | Dictionary containing values to configure the table of contents.
+\keys_define:nn { ravenhill/latex/toc } {
+  removenum .bool_set:N = \l_rvnlatex_removenum_bool ,
+}
+
+% | Renders the table of contents for the current document.
+% | Arguments:
+% |   #1: Boolean 
+% |       Whether to add the page number at the bottom (next page will start a new numbering 
+% |       regardless of this setting). 
+% |   #2: (Optional) Token List 
+% |       The page numbering scheme to use (defaults to 'arabic').
+\NewDocumentCommand { \includetoc } { m } {
+  \bool_if:nTF {#1} { \thispagestyle { empty } } { }
+  \tableofcontents
+  \newpage
+
+  \clearpage
+  \IfNoValueTF {#1} { \pagenumbering {arabic} } { \pagenumbering {#1} }
+}
+
+% | Trims leading and trailing whitespace from the given string.
+% | Arguments:
+% |   #1: Token List
+% |       The string to trim.
+\DeclareExpandableDocumentCommand{\trimspaces}{m}{
+  \tl_trim_spaces:V #1
+}
+
+% | Auxiliary function for \trimspaces.
+\cs_generate_variant:Nn \tl_trim_spaces:n { V }

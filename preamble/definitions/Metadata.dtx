@@ -22,7 +22,7 @@
   \RenewDocumentCommand {\DTMdisplaytime}{mmm}{\DTMtwodigits{##1}\DTMtwodigits{##2}}
 }
 
-% region : TEMPLATE METADATA -----------------------------------------------------------------------
+% region : TEMPLATE SETUP --------------------------------------------------------------------------
 % | Dictionary containing the metadata of the document.
 \keys_define:nn { ravenhill/latex/meta } {
   title .tl_set:N = \l_rvnlatex_title_str ,
@@ -68,6 +68,8 @@
   \setvmeta { commit } { \l_rvnlatex_commit_int }
   \group_end:
 }
+
+% endregion
 
 % | Set a custom name for the abstract.
 \NewDocumentCommand { \setabstractname } { m } {
