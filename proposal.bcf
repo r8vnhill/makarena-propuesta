@@ -2351,7 +2351,7 @@
     <bcf:citekey order="3">maschlerGameTheory2013</bcf:citekey>
     <bcf:citekey order="3">thekumparampilEfficientAlgorithmsSmooth2019</bcf:citekey>
     <bcf:citekey order="3">Minimax2022</bcf:citekey>
-    <bcf:citekey order="4">shannonProgrammingComputerPlaying1988a</bcf:citekey>
+    <bcf:citekey order="4">shannonProgrammingComputerPlaying1988</bcf:citekey>
     <bcf:citekey order="5">dyerCS540Lecture</bcf:citekey>
     <bcf:citekey order="6">EvaluationFunction2022</bcf:citekey>
     <bcf:citekey order="7">ZerosumGame2022</bcf:citekey>
@@ -2377,7 +2377,7 @@
     <bcf:citekey order="23">maschlerGameTheory2013</bcf:citekey>
     <bcf:citekey order="24">thekumparampilEfficientAlgorithmsSmooth2019</bcf:citekey>
     <bcf:citekey order="25">Minimax2022</bcf:citekey>
-    <bcf:citekey order="26">shannonProgrammingComputerPlaying1988a</bcf:citekey>
+    <bcf:citekey order="26">shannonProgrammingComputerPlaying1988</bcf:citekey>
     <bcf:citekey order="27">dyerCS540Lecture</bcf:citekey>
     <bcf:citekey order="28">EvaluationFunction2022</bcf:citekey>
     <bcf:citekey order="29">ZerosumGame2022</bcf:citekey>
@@ -2385,12 +2385,11 @@
     <bcf:citekey order="31">ahvanooeySurveyGeneticProgramming2019</bcf:citekey>
     <bcf:citekey order="32">langdonFoundationsGeneticProgramming2013</bcf:citekey>
     <bcf:citekey order="33">poliFieldGuideGenetic2008</bcf:citekey>
-    <bcf:citekey order="34">shannonProgrammingComputerPlaying1988</bcf:citekey>
-    <bcf:citekey order="35">jeffersonGenesysSystemEvolution1990</bcf:citekey>
-    <bcf:citekey order="36">kozaGeneticProgrammingMeans1994a</bcf:citekey>
-    <bcf:citekey order="37">kuscuEvolvingGeneralisedBehaviour1998</bcf:citekey>
-    <bcf:citekey order="38">raymondMultiobjectiveGeneticProgramming2021</bcf:citekey>
-    <bcf:citekey order="39">raymondAdaptiveWeightedSplines2020</bcf:citekey>
+    <bcf:citekey order="34">jeffersonGenesysSystemEvolution1990</bcf:citekey>
+    <bcf:citekey order="35">kozaGeneticProgrammingMeans1994a</bcf:citekey>
+    <bcf:citekey order="36">kuscuEvolvingGeneralisedBehaviour1998</bcf:citekey>
+    <bcf:citekey order="37">raymondMultiobjectiveGeneticProgramming2021</bcf:citekey>
+    <bcf:citekey order="38">raymondAdaptiveWeightedSplines2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="ynt">
