@@ -1,8 +1,17 @@
 \subsubsection{Función de evaluación}
-  \begin{definition}[\textbf{Recurso}]
+  \begin{definition}[\textbf{Recurso}\footnotemark]
     Se le dirá recurso a cada elemento en el juego que acerque a un jugador a una jugada óptima.
+    Formalmente, diremos que un \textit{recurso} es un cambio en el estado del juego que incrementa
+    las probabilidades de que el jugador que lo obtiene gane la partida.
+
+    \textbf{Ejemplo}: En el ajedrez a cada pieza se le otorga un valor, siendo las \enquote{mejores 
+    piezas} las que tienen un valor más alto.
+    La pieza con valor más bajo es el \textit{peón} con un valor de 1; así podemos definir el valor
+    de cada pieza en base al valor de un peón (diciendo que una pieza \(\mathbf{X}\) tiene un valor
+    equivalente a \(x\) \textit{peones}).
+    En este caso diremos que los recursos son los peones.
   \end{definition}
-  \ab{Es un poquito abstract lo que es un recurso. Puedes dar un ejemplo?}
+  \footnotetext{Término propio.}
 
   Se le dirá \textbf{función de evaluación}\cite{EvaluationFunction2022} \(v_i(s)\) a la función 
   que determina la cantidad de recursos que tiene el jugador \(i\) en el estado \(s\).

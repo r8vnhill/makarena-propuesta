@@ -1,0 +1,20 @@
+\section{Resultados esperados}
+  Para evaluar los resultados de este trabajo se utilizarán las implementaciones de los juegos 
+  mencionados en la sección anterior para simular partidas entre jugadores artificiales.
+  Para esto se utilizarán 3 tipos de jugadores artificiales: un jugador que tome decisiones 
+  aleatorias, un jugador que tome decisiones basadas en el \textit{algoritmo Minimax} con una 
+  función de evaluación tomada de la literatura (conocida), y uno que tome decisiones basadas en el 
+  \textit{algoritmo Minimax} con funciones de evaluación obtenidas con el algoritmo de GP.
+  
+  Los jugadores artificiales luego pueden evaluarse en base a su \textit{ratio de victorias} 
+  (\textit{win rate}) enfrentandose a otros jugadores artificiales (tanto del mismo tipo 
+  como de los otros).
+  En este caso, se espera que los jugadores basados en \textit{Minimax} tengan un \textit{win rate}
+  superior a los que toman decisiones aleatorias, y que los jugadores con funciones de evaluación
+  deducidas con GP tengan ratios de victoria similares a los que utilizan funciones de evaluación
+  conocidas.
+
+  Además, se compararán las funciones \textit{deducidas} con las \textit{conocidas} en cuanto a su
+  similitud y complejidad.
+  En este caso, se espera que las funciones de evaluación deducidas tengan una complejidad similar a
+  las de las funciones de evaluación conocidas.

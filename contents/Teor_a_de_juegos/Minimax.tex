@@ -7,16 +7,18 @@
 
   \begin{definition}[\textbf{Valor \textit{Maximin}}]
     El valor \textit{maximin} de un estado del juego es la máxima cantidad de recursos que puede 
-    obtener un jugador, sin conocer las jugadas de su oponente. \ab{De donde viene esta formalismo? Es importante mencionarlo}
+    obtener un jugador, sin conocer las jugadas de su oponente.
 
-    Formalmente:
+    Formalmente \cite{Minimax2022}:
     \[
       \underline{v_{i}} = \max_{a_{i}}\min_{a_{-i}}v_{i}(a_{i},a_{-i})
     \]
     Donde:
     \begin{itemize}
       \item \(i\) es el índice del jugador actual.
-      \item \(-i\) representa a todos los jugadores oponentes. \ab{tenemos $-\text{i} \implies \text{j}\in\cal{J} \land \text{j} \neq \text{i}$ ?}
+      \item \(-i\) representa a el conjunto de todos los jugadores oponentes (\(-\text{i} \implies 
+        \text{j}\in\cal{J} \land \text{j} \neq \text{i}\) con \(\cal{J}\) el conjunto de todos los 
+        jugadores).
       \item \(a_i\) es la jugada del jugador \(i\).
       \item \(a_{-i}\) son las jugadas de todos los oponentes.
       \item \(v_i\) es la función de evaluación del estado del juego en el turno del jugador 
@@ -35,10 +37,14 @@
     \]
   \end{definition}
 
-\ab{Lo que significa? Puedes detallar $\underline{v_{i}}$?}
+  \textit{Nota: Las definiciones de \(\underline{v}_{i}\) y \(\overline{v_{i}}\) se proveen solamente
+  para mantener la formalidad de la función presentada a continuación.}
+
+  % \ab{Lo que significa? Puedes detallar $\underline{v_{i}}$?}
 
   \begin{definition}
-    Se define la función \(MM\) para un estado del juego \(s\) como:
+    Se define la función \(MM\)\footnote{O \textit{función Minimax}; se prefiere \(MM\) para evitar 
+    confusiones con el \textit{algoritmo Minimax}} para un estado del juego \(s\) como:
     \[
       MM_i(s) = \begin{cases}
         v_i(s) & \text{si } s = F  \\
@@ -46,7 +52,8 @@
         \overline{v_{i}}(s) & \text{si es el turno del oponente } -i
       \end{cases}  
     \]
-    Con \(F\) representando el estado final del juego. \ab{A que corresponde MM?}
+    Con \(F\) representando el estado final del juego. 
+    % \ab{A que corresponde MM?}
   \end{definition}
 
   \begin{definition}[\textbf{Algoritmo \textit{Minimax}}]
@@ -89,4 +96,4 @@
   sea la jugada.
   Finalmente se escoge la secuencia de jugadas marcadas en verde.
   
-  \ab{La figura 1 contiene mucha información. Tener menor información, por ejemplo con solamente 3 niveles en vez de 5, ayuda a tener una menor descripción. No puede poner un ejemplo de ajedrez que ilustra la figura? Hasta ahora, es bien abstracto}
+  % \ab{La figura 1 contiene mucha información. Tener menor información, por ejemplo con solamente 3 niveles en vez de 5, ayuda a tener una menor descripción. No puede poner un ejemplo de ajedrez que ilustra la figura? Hasta ahora, es bien abstracto}

@@ -2,16 +2,18 @@
   \label[section]{sec:estado-del-arte}
   \subsection{\textit{Artificial Ant Problem}}
     El \textbf{problema de las hormigas artificiales} 
-    \autocite{jeffersonGenesysSystemEvolution1990,kozaGeneticProgrammingMeans1994a} es un problema 
-    que busca encontrar un programa que, al ser 
+    \autocite{jeffersonGenesysSystemEvolution1990,kozaGeneticProgrammingMeans1994a} (AAP) es un 
+    problema que busca encontrar un programa que, al ser 
     ejecutado para una hormiga, les permite encontrar toda la comida en una grilla con una cantidad 
     máxima de movimientos, considerando que la comida esté distribuida de acuerdo a un patrón.
 
     En este caso, se espera que el programa sea capaz de reconocer los patrones de comida para 
     encontrarla, podemos interpretar que este problema es un juego de estrategia de un jugador.
-    Este problema puede ser reinterpretado como un juego de dos jugadores donde hay un adversario
-    que no puede realizar movimientos y cada pieza de comida es un recurso; dicho de otra forma:
-    el adversario tiene tantos recursos como la cantidad de comida que la hormiga aún no encuentra.
+    
+    Para ver la relevancia de este problema para este trabajo, se debe notar que AAP puede ser 
+    reinterpretado como un juego de dos jugadores donde hay un adversario que no puede realizar 
+    movimientos y cada pieza de comida es un recurso; dicho de otra forma: el adversario tiene 
+    tantos recursos como la cantidad de comida que la hormiga aún no encuentra.
     De esta forma, el problema de la hormiga se reduce a un \textit{juego de suma zero} de dos 
     jugadores, por lo que encontrar una solución para este problema es equivalente a deducir una
     función de evaluación para \textit{Minimax}.
@@ -38,7 +40,7 @@
     Las siguientes secciones presentan soluciones a este problema de generalización para casos 
     generales y se plantearán como alternativas a la solución original de \textit{Koza}.
 
-\ab{No es claro porque artificial ant problem es un trabajo relacionado...}
+% \ab{No es claro porque artificial ant problem es un trabajo relacionado...}
 
   \subsection{Regresión simbólica}
     \label{sec:regresion-simb}
@@ -61,6 +63,6 @@
     Para esto los autores utilizan una representación alternativa a la representación clásica de
     GP utilizando \textit{Splines} en lugar de árboles para representar el modelo de la solución.
     
-  \subsection{\textit{Deep Learning} en videojuegos}
+  % \subsection{\textit{Deep Learning} en videojuegos}
     
-\ab{Quizas puedes no hablar de deep learning. Lleva mucho riesgos a hablar de esto. Quizas puedes hablar de reinforcement learning en vez (entiendo que minimax es un tipo de reinforcement learning}
+% \ab{Quizas puedes no hablar de deep learning. Lleva mucho riesgos a hablar de esto. Quizas puedes hablar de reinforcement learning en vez (entiendo que minimax es un tipo de reinforcement learning}

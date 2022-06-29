@@ -23,11 +23,18 @@
       \textbf{Nancy Hitschfeld} \\
       \textit{Departamento de Ciencias de la Computación} \\
       Universidad de Chile  \\
-      {\small\textit{Profesora guía}}
+      {\small\textit{Profesora guía}},
+      \textbf{Alexandre Bergel} \\
+      % \textit{Departamento de Ciencias de la Computación} \\
+      % Universidad de Chile  \\
+      {\small\textit{Profesor co-guía}}
     },
     logo = {logos/LogoDCC.pdf},
     location = {Santiago, Chile},
-    date = \today
+    date = \today,
+    version = 1,
+    build = 0, 
+    commit = 0
   }
 
 \begin{document}
@@ -47,16 +54,16 @@
   \end{titlepage}
 
   \pagenumbering{Roman}
-  
-  \newcommand{\ab}[1]{{\color{red}\textbf{AB: #1}}}
-  
+
+  \newcommand{\ab}[1]{{\color{red}\textbf{AB\@: #1}}}
+
   \attributionpage
 
   \tableofcontents
   \newpage
 
   \clearpage
-  \pagenumbering{arabic} 
+  \pagenumbering{arabic}
 
   \subimport{contents}{Introducci_n}
   \subimport{contents}{Contexto}
@@ -65,9 +72,7 @@
   \subimport{contents}{Pregunta_de_investigaci_n}
   \subimport{contents/}{Objetivos.tex}
   \subimport{contents/}{Metodologias.tex}
-  
-  \section{Resultados esperados}
-    \blindtext
+  \subimport{contents/}{Resultados_esperados.tex}
 
   % \nocite{*}
   \printbibliography
